@@ -154,15 +154,15 @@ function autoSetAura()
     var ability2 = $("#p2 .ability").val()
     if(ability1 == "Fairy Aura" || ability2 == "Fairy Aura" )
         $("input:checkbox[id='fairy-aura']").prop("checked", true)
-    else        
+    else
         $("input:checkbox[id='fairy-aura']").prop("checked", lastAura[0])
     if(ability1 == "Dark Aura" || ability2 == "Dark Aura")
         $("input:checkbox[id='dark-aura']").prop("checked", true)
-    else        
+    else
         $("input:checkbox[id='dark-aura']").prop("checked", lastAura[1])
     if(ability1 == "Aura Break" || ability2 == "Aura Break" )
         $("input:checkbox[id='aura-break']").prop("checked", true)
-    else        
+    else
         $("input:checkbox[id='aura-break']").prop("checked", lastAura[2])
 }
 function autoSetTerrain()
@@ -534,7 +534,7 @@ function calculate() {
             highestMaxPercent = maxPercent;
             bestResult = $(resultLocations[0][i].move);
         }
-        
+
         result = damageResults[1][i];
         minDamage = result.damage[0] * p2.moves[i].hits;
         maxDamage = result.damage[result.damage.length-1] * p2.moves[i].hits;
@@ -570,7 +570,7 @@ $(".result-move").change(function() {
         if (result) {
             $("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
             if (result.parentDamage) {
-                $("#damageValues").text("(First hit: " + result.parentDamage.join(", ") + 
+                $("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
                     "; Second hit: " + result.childDamage.join(", ") + ")");
             } else {
                 $("#damageValues").text("(" + result.damage.join(", ") + ")");
@@ -828,7 +828,7 @@ $(".gen").change(function () {
     $("select.ability").find("option").remove().end().append("<option value=\"\">(other)</option>" + abilityOptions);
     var itemOptions = getSelectOptions(items, true);
     $("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
-    
+
     $(".set-selector").val(getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3].id);
     $(".set-selector").change();
 });
@@ -882,7 +882,7 @@ function getSetOptions() {
         var pokeName = pokeNames[i];
         setOptions.push({
             pokemon: pokeName,
-            text: pokeName
+            text: pokeName,
         });
         if (pokeName in setdex) {
             var setNames = Object.keys(setdex[pokeName]);
@@ -925,34 +925,21 @@ function getSelectOptions(arr, sort, defaultIdx) {
     return r;
 }
 
+function formatMon(pokemon) {
+  if(pokemon.id == null) {
+    var $pokemon =  $("<b>" + pokemon.text + "</b>");
+  }
+  else $pokemon = pokemon.text;
+  return $pokemon;
+}
 $(document).ready(function() {
     $("#gen7").prop("checked", true);
     $("#gen7").change();
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
     $(".calc-trigger").bind("change keyup", calculate);
     $(".set-selector").select2({
-        formatResult: function(object) {
-            return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
-        },
-        query: function(query) {
-            var setOptions = getSetOptions();
-            var pageSize = 30;
-            var results = [];
-            for (var i = 0; i < setOptions.length; i++) {
-                var pokeName = setOptions[i].pokemon.toUpperCase();
-                if (!query.term || pokeName.indexOf(query.term.toUpperCase()) === 0) {
-                    results.push(setOptions[i]);
-                }
-            }
-            query.callback({
-                results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
-                more: results.length >= query.page * pageSize
-            });
-        },
-        initSelection: function(element, callback) {
-            var data = getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3];
-            callback(data);
-        }
+        data: getSetOptions(),
+          templateResult: formatMon,
     });
     $(".move-selector").select2({
         dropdownAutoWidth:true,

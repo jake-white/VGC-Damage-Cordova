@@ -10,9 +10,9 @@
 
 /* general page styling */
 body {
+    width: 100%;
     font: 10pt Verdana, sans-serif;
     background-color: #bbeedd;
-    padding: 0 1em;
 }
 fieldset {
     float: left;
@@ -31,6 +31,7 @@ th {
     font-weight: bold;
     font-size: 1.5em;
     height: 50px;
+    margin-top: 10px;
 }
 .yeartag {
     margin-right: 1em;
@@ -51,7 +52,7 @@ th {
     display: inline-block;
 }
 .poke-info {
-    width: 90%;
+    width: 100%;
 }
 .field-info {
     width: 90%
@@ -125,6 +126,7 @@ th {
     cursor: default;
 }
 .btn-input {
+    margin-right: 10px;
     display: none;
 }
 .btn-input:disabled + .btn {
@@ -170,7 +172,7 @@ th {
     display: inline-block;
     width: 6em;
 }
-.poke-info input:not([type]), .poke-info input[type="text"], .poke-info span :not(.select2-chosen) {
+.poke-info input:not([type]), .poke-info input[type="text"], .poke-info span :not(.select2) {
     display: inline-block;
     width: 2.5em;
 }
@@ -179,14 +181,15 @@ th {
     width: 3em;
 }
 .info-group {
-  align: center;
+    align-self: center;
     margin: 1em 0;
 }
 .set-selector {
-    width: 28em;
+    align-self: center;
 }
 .info-selectors select {
-    width: 15em;
+    align-self: center;
+    width: 30%;
 }
 select.toxic-counter {
     width: 4.5em;
@@ -205,14 +208,10 @@ select.toxic-counter {
 }
 .poke-info .crit-btn {
     font-size: 0.8em;
-    width: 2.5em;
-    height: 1em;
     padding: 3px 3px;
 }
 .poke-info .x-btn {
     font-size: 0.8em;
-    width: 3.5em;
-    height: 1em;
     padding: 3px 3px;
     margin-left: 0.3em;
 }

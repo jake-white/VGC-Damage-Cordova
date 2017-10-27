@@ -13,7 +13,7 @@
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-86401070-1', 'auto');
   ga('send', 'pageview');
@@ -23,7 +23,7 @@
     <meta charset="UTF-8" />
     <title>Pokémon Damage Calculator</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet" href="script_res/select2.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="script_res/ap_calc.css" />
     <link type="text/css" rel="stylesheet" href="script_res/nb_calc.css" />
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -48,30 +48,26 @@
         <hr />
 
     <div align="center">
-  <!-- Project Wonderful Ad Box Loader -->
-    <script type="text/javascript">
-       (function(){function pw_load(){
-          if(arguments.callee.z)return;else arguments.callee.z=true;
-          var d=document;var s=d.createElement('script');
-          var x=d.getElementsByTagName('script')[0];
-          s.type='text/javascript';s.async=true;
-          s.src='//www.projectwonderful.com/pwa.js';
-          x.parentNode.insertBefore(s,x);}
-       if (window.attachEvent){
-        window.attachEvent('DOMContentLoaded',pw_load);
-        window.attachEvent('onload',pw_load);}
-       else{
-        window.addEventListener('DOMContentLoaded',pw_load,false);
-        window.addEventListener('load',pw_load,false);}})();
-    </script>
-  <!-- End Project Wonderful Ad Box Loader -->
+      <!-- Project Wonderful Ad Box Loader -->
+      <script type="text/javascript">
+         (function(){function pw_load(){
+            if(arguments.callee.z)return;else arguments.callee.z=true;
+            var d=document;var s=d.createElement('script');
+            var x=d.getElementsByTagName('script')[0];
+            s.type='text/javascript';s.async=true;
+            s.src='http://www.projectwonderful.com/pwa.js';
+            x.parentNode.insertBefore(s,x);}
+         if (window.attachEvent){
+          window.attachEvent('DOMContentLoaded',pw_load);
+          window.attachEvent('onload',pw_load);}
+         else{
+          window.addEventListener('DOMContentLoaded',pw_load,false);
+          window.addEventListener('load',pw_load,false);}})();
+      </script>
+      <!-- End Project Wonderful Ad Box Loader -->
 
   <!-- Project Wonderful Ad Box Code -->
-    <div id="pw_adbox_79789_1_0"></div>
-    <script type="text/javascript"></script>
-    <noscript><map name="admap79789" id="admap79789"><area href="http://www.projectwonderful.com/out_nojs.php?r=0&c=0&id=79789&type=1" shape="rect" coords="0,0,468,60" title="" alt="" target="_blank" rel="noopener noreferrer" /></map>
-    <table cellpadding="0" cellspacing="0" style="width:468px;border-style:none;background-color:#ffffff;"><tr><td><img src="http://www.projectwonderful.com/nojs.php?id=79789&type=1" style="width:468px;height:60px;border-style:none;" usemap="#admap79789" alt="" /></td></tr><tr><td style="background-color:#ffffff;" colspan="1"><center><a style="font-size:10px;color:#0000ff;text-decoration:none;line-height:1.2;font-weight:bold;font-family:Tahoma, verdana,arial,helvetica,sans-serif;text-transform: none;letter-spacing:normal;text-shadow:none;white-space:normal;word-spacing:normal;" href="http://www.projectwonderful.com/advertisehere.php?id=79789&type=1" target="_blank">Ads by Project Wonderful!  Your ad here, right now: $0</a></center></td></tr></table>
-    </noscript>
+  <div id="pw_adbox_79789_1_0"></div>
   <!-- End Project Wonderful Ad Box Code -->
     </div>
     <p>Sun/Moon VGC calculator by Jake White (<a href="https://twitter.com/squirrelboyVGC">@squirrelboyVGC</a>). Submit bug/feature reports/requests through <a href="https://github.com/jake-white/VGC-Damage-Calculator/issues">Github</a> or <a href="http://www.trainertower.com/forums/threads/damage-calculator-bug-reports.62/">this thread</a>, not through Twitter please :)</p>
@@ -98,21 +94,21 @@
             <div class="small-text"><span id="damageValues">(If you see this message for more than a few seconds, try enabling JavaScript. If you have that enabled, try deleting your cookies. Otherwise, I won't be able to help you unless you send a screenshot of your browser console.)</span></div>
         </div>
 
-        <div class="container">
+        <div class="container"style="width: 100%">
           <ul class="nav nav-tabs">
             <li class="active"><a href="#p1Tab">Pokémon 1</a></li>
             <li><a href="#fieldTab">Field</a></li>
             <li><a href="#p2Tab">Pokémon 2</a></li>
           </ul>
 
-            <div class="tab-content">
+            <div class="tab-content" >
               <div id="p1Tab" class="tab-pane fade in active">
 
 
                 <div class="panel poke-info" id="p1">
                     <div class="panel-heading"><h4 class="panel-title" style="color: #fff;">Pokémon 1</h4></div>
                     <div class="panel-body">
-                        <input type="text" class="set-selector calc-trigger" />
+                        <input type="text" class="set-selector calc-trigger" style="width: 90%;"/>
                         <div class="info-group">
                             <div>
                                 <label>Type</label>
@@ -359,15 +355,6 @@
                               <input class="btn-input calc-trigger" type="checkbox" id="evoR" /><label class="btn btn-xwide" for="evoR"><img src="image_res/133.png"><br>Extreme Evoboost</label>
                           </div>
                       </div>
-                                      <!--squirrelboy1225's HTML additions are right here-->
-                      <p>Please enter your custom set here.</p>
-                      Spread Name: <input type = "text" id = "spreadName" style = "width: 60%" value = "My Custom Set">
-                      <br>
-                      <textarea rows="9" cols="40" id = "customMon"></textarea>
-                      <br>
-                      <script type="text/javascript" src="script_res/setdex_custom.js"></script>
-                      <button type = "button" onclick = "savecustom()">Save</button> <button type = "button" onclick = "deletecustom()">Delete Custom Sets</button>
-                      <p>You may need to refresh the page after deleting your custom sets.  If you encounter a bug, please try deleting your cookies or reporting it!</p>
                   </div>
               </div>
             </div>
@@ -483,8 +470,7 @@
     </div>
     </body>
 
-
-    <script type="text/javascript" src="script_res/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.full.min.js"></script>
     <script type="text/javascript" src="script_res/pokedex.js"></script>
     <script type="text/javascript" src="script_res/setdex_showdown.js"></script>
     <script type="text/javascript" src="script_res/setdex_globalLink.js"></script>
