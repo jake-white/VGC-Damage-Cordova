@@ -952,8 +952,12 @@ $(document).ready(function() {
         initSelection: function(element, callback) {
             var data = getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3];
             callback(data);
-        }
+        },
     });
+    $('set-selector').on('select2:open', function(e) {
+        $('.select2-search input').prop('focus',false);
+    })
+
     $(".move-selector").select2({
         dropdownAutoWidth:true,
         matcher: function(term, text) {
