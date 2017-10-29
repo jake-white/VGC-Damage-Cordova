@@ -882,7 +882,7 @@ function getSetOptions() {
         var pokeName = pokeNames[i];
         setOptions.push({
             pokemon: pokeName,
-            text: pokeName,
+            text: pokeName
         });
         if (pokeName in setdex) {
             var setNames = Object.keys(setdex[pokeName]);
@@ -925,21 +925,34 @@ function getSelectOptions(arr, sort, defaultIdx) {
     return r;
 }
 
-function formatMon(pokemon) {
-  if(pokemon.id == null) {
-    var $pokemon =  $("<b>" + pokemon.text + "</b>");
-  }
-  else $pokemon = pokemon.text;
-  return $pokemon;
-}
 $(document).ready(function() {
     $("#gen7").prop("checked", true);
     $("#gen7").change();
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
     $(".calc-trigger").bind("change keyup", calculate);
     $(".set-selector").select2({
-        data: getSetOptions(),
-          templateResult: formatMon,
+        formatResult: function(object) {
+            return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
+        },
+        query: function(query) {
+            var setOptions = getSetOptions();
+            var pageSize = 30;
+            var results = [];
+            for (var i = 0; i < setOptions.length; i++) {
+                var pokeName = setOptions[i].pokemon.toUpperCase();
+                if (!query.term || pokeName.indexOf(query.term.toUpperCase()) === 0) {
+                    results.push(setOptions[i]);
+                }
+            }
+            query.callback({
+                results: results.slice((query.page - 1) * pageSize, query.page * pageSize),
+                more: results.length >= query.page * pageSize
+            });
+        },
+        initSelection: function(element, callback) {
+            var data = getSetOptions()[gen > 3 ? 1 : gen === 1 ? 5 : 3];
+            callback(data);
+        }
     });
     $(".move-selector").select2({
         dropdownAutoWidth:true,

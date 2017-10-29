@@ -4,7 +4,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-admobpro"
         version="2.29.24">
-
+      
     <name>AdMob Plugin Pro</name>
     <description>Ultimate Cordova Plugin for Google AdMob and DFP to monetize hybrid apps. Show mobile Ad with single line of JavaScript. Compatible with Cordova CLI, PhoneGap Build, Intel XDK/Crosswalk, Google ChromeApp, Ionic, Meteor, etc.</description>
     <author>Liming Xie</author>
@@ -26,7 +26,7 @@
     <!-- android, now build with gradle instead of ant -->
     <platform name="android">
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" 
                       android:name="com.google.android.gms.ads.AdActivity"
                       android:theme="@android:style/Theme.Translucent" />
           </config-file>
@@ -34,7 +34,7 @@
             <uses-permission android:name="android.permission.INTERNET"/>
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
           </config-file>
-
+          
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AdMob">
                 <param name="android-package" value="com.rjfun.cordova.admob.AdMobPlugin"/>
@@ -49,11 +49,11 @@
         <!-- but unfortunately, build.phonegap.com, Intel XDK, and some other tools still use ant -->
         <!-- dependency id="cordova-plugin-googleplayservices"/ -->
      </platform>
-
+     
     <!-- same as android, but use ant instead of gradle -->
     <platform name="amazon-fireos">
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" 
                       android:name="com.google.android.gms.ads.AdActivity"
                       android:theme="@android:style/Theme.Translucent" />
           </config-file>
@@ -89,9 +89,9 @@
          <source-file src="src/ios/CDVAdMobPlugin.m"/>
          <header-file src="src/ios/AdMobMediation.h"/>
          <source-file src="src/ios/AdMobMediation.m"/>
-
+         
          <framework src="src/ios/GoogleMobileAds.framework" custom="true" />
-
+         
          <framework src="AdSupport.framework" />
          <framework src="AudioToolbox.framework" />
          <framework src="AVFoundation.framework" />
@@ -127,12 +127,12 @@
           </config-file>
           <source-file src="src/wp8/AdMobPlugin.cs" />
           <source-file src="src/wp8/AdMobOptions.cs" />
-
+          
           <framework src="src/wp8/GoogleAds.dll" custom="true" />
      </platform>
 
      <!-- Windows Phone 8.1+ -->
-     <!--
+     <!-- 
      <platform name="windows">
          <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
              <Capability Name="ID_CAP_LOCATION" />
@@ -144,7 +144,7 @@
         </config-file>
         <source-file src="src/wp8/AdMobPlugin.cs" />
         <source-file src="src/wp8/AdMobOptions.cs" />
-
+          
         <framework src="src/wp8/GoogleAds.dll" custom="true" />
     </platform>
     -->

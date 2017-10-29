@@ -1,6 +1,6 @@
 {
-  "name": "HelloCordova",
-  "short_name": "HelloCordova",
+  "name": "VGC Damage Calculator",
+  "short_name": "VGC Damage Calculator",
   "description": "Description of your app from template",
   "start_url": "index.html",
   "scope": "index.html",

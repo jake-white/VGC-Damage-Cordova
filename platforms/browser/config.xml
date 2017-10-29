@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+<widget id="com.whitejaa.damage" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>VGC Damage Calculator</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="squirrelboy1225@gmail.com" href="http://jake-white.github.io">
+        Jake White
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -15,4 +15,10 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon density="ldpi" height="48" platform="android" src="res/icon/android/48.png" width="48" />
+    <icon density="mdpi" height="64" platform="android" src="res/icon/android/64.png" width="64" />
+    <icon density="hdpi" height="72" platform="android" src="res/icon/android/72.png" width="72" />
+    <icon density="xhdpi" height="96" platform="android" src="res/icon/android/96.png" width="96" />
+    <icon density="xxhdpi" height="144" platform="android" src="res/icon/android/144.png" width="144" />
+    <icon density="xxxhdpi" height="196" platform="android" src="res/icon/android/196.png" width="196" />
 </widget>
