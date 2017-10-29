@@ -172,7 +172,7 @@ th {
     display: inline-block;
     width: 6em;
 }
-.poke-info input:not([type]), .poke-info input[type="text"], .poke-info span :not(.select2) {
+.poke-info input:not([type]), .poke-info input[type="text"], .poke-info span :not(.select2-chosen) {
     display: inline-block;
     width: 2.5em;
 }

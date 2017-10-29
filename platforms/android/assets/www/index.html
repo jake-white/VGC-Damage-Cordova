@@ -31,12 +31,38 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <script>
   $(document).ready(function(){
       $(".nav-tabs a").click(function(){
           $(this).tab('show');
       });
+
+
+        // select the right Ad Id according to platform
+        var admobid = {};
+        if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos
+          admobid = {
+            banner: 'a-app-pub-1585074682884657/4793534712', // or DFP format "/6253334/dfp_example_ad"
+          };
+        } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
+          admobid = {
+            banner: 'a-app-pub-1585074682884657/4793534712', // or DFP format "/6253334/dfp_example_ad"
+            interstitial: 'ca-app-pub-xxx/kkk'
+          };
+        } else { // for windows phone
+          admobid = {
+            banner: 'ca-app-pub-xxx/zzz', // or DFP format "/6253334/dfp_example_ad"
+            interstitial: 'ca-app-pub-xxx/kkk'
+          };
+        }
+        // it will display smart banner at top center, using the default options
+      if(AdMob) AdMob.createBanner({
+        adId: admobid.banner,
+        position: AdMob.AD_POSITION.TOP_CENTER,
+        autoShow: true });
+
   });
 </script>
 <body>
@@ -69,6 +95,10 @@
   <!-- Project Wonderful Ad Box Code -->
   <div id="pw_adbox_79789_1_0"></div>
   <!-- End Project Wonderful Ad Box Code -->
+
+  <script>
+
+  </script>
     </div>
     <p>Welcome to the Sun/Moon VGC calculator-- Android version! </p>
     <p>Created by Jake White (<a href="https://twitter.com/squirrelboyVGC">@squirrelboyVGC</a>) </p>

@@ -5,6 +5,12 @@
   },
   "config_munge": {
     "files": {
+      "AndroidManifest.xml": {
+        "parents": {
+          "/manifest/application": [],
+          "/*": []
+        }
+      },
       "res/xml/config.xml": {
         "parents": {
           "/*": [
@@ -20,11 +26,15 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-extension": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {},
   "modules": [],
   "plugin_metadata": {
-    "cordova-plugin-whitelist": "1.3.2"
+    "cordova-plugin-whitelist": "1.3.2",
+    "cordova-plugin-extension": "1.5.2"
   }
 }
