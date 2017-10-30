@@ -8,6 +8,10 @@
     text-align:center;
 }
 
+#reflectL, #reflectR, #lightScreenL, #lightScreenR {
+  width: 50%;
+}
+
 /* general page styling */
 body {
     width: 100%;
