@@ -29,11 +29,17 @@
           ],
           "/*": [
             {
+              "xml": "<uses-permission android:name=\"com.android.permission.vending.BILLING\" />",
+              "count": 1
+            }
+          ],
+          "/manifest": [
+            {
               "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
               "count": 1
             },
             {
-              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+              "xml": "<uses-permission android:name=\"android.permission.vending.BILLING\" />",
               "count": 1
             }
           ]

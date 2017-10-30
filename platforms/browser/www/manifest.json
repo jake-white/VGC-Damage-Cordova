@@ -4,7 +4,7 @@
   "name": "VGC Damage Calculator",
   "short_name": "VGC Damage Calculator",
   "version": "com.whitejaa.damage",
-  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "description": "Pokémon damage calculator designed for the VGC format.",
   "author": "Jake White",
   "icons": [
     {

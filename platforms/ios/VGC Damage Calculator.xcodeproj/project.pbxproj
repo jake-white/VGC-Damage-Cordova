@@ -39,7 +39,6 @@
 		8A2D18C4D8844EBF91B9B05D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BE5DAD58584F72893F584E /* MessageUI.framework */; };
 		9FD12C966500451E86D83B5A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC83CFC0D74475092E08BED /* OpenGLES.framework */; };
 		51ABFC49C2DC4437AC79AC45 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265B5ACFDDF8421C85A29CE1 /* SafariServices.framework */; };
-		6FFF5D16842F451293EB69A2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60CC10F7C4AE4D579D383512 /* StoreKit.framework */; };
 		1D9F116C9E3847728CDDA807 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D361D5F0FD04471FA1BEDBB7 /* SystemConfiguration.framework */; };
 		D2C2E23047BA4D25AE77CF57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C7B53E5E9047D4940552AE /* UIKit.framework */; };
 /* End PBXBuildFile section */
@@ -110,7 +109,6 @@
 		B4BE5DAD58584F72893F584E /* MessageUI.framework */ = {isa = PBXFileReference; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		5EC83CFC0D74475092E08BED /* OpenGLES.framework */ = {isa = PBXFileReference; name = "OpenGLES.framework"; path = "System/Library/Frameworks/OpenGLES.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		265B5ACFDDF8421C85A29CE1 /* SafariServices.framework */ = {isa = PBXFileReference; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		60CC10F7C4AE4D579D383512 /* StoreKit.framework */ = {isa = PBXFileReference; name = "StoreKit.framework"; path = "System/Library/Frameworks/StoreKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		D361D5F0FD04471FA1BEDBB7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		04C7B53E5E9047D4940552AE /* UIKit.framework */ = {isa = PBXFileReference; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
@@ -141,7 +139,6 @@
 				8A2D18C4D8844EBF91B9B05D /* MessageUI.framework in Frameworks */,
 				9FD12C966500451E86D83B5A /* OpenGLES.framework in Frameworks */,
 				51ABFC49C2DC4437AC79AC45 /* SafariServices.framework in Frameworks */,
-				6FFF5D16842F451293EB69A2 /* StoreKit.framework in Frameworks */,
 				1D9F116C9E3847728CDDA807 /* SystemConfiguration.framework in Frameworks */,
 				D2C2E23047BA4D25AE77CF57 /* UIKit.framework in Frameworks */,
 			);
@@ -234,7 +231,6 @@
 				B4BE5DAD58584F72893F584E /* MessageUI.framework */,
 				5EC83CFC0D74475092E08BED /* OpenGLES.framework */,
 				265B5ACFDDF8421C85A29CE1 /* SafariServices.framework */,
-				60CC10F7C4AE4D579D383512 /* StoreKit.framework */,
 				D361D5F0FD04471FA1BEDBB7 /* SystemConfiguration.framework */,
 				04C7B53E5E9047D4940552AE /* UIKit.framework */,
 			);
