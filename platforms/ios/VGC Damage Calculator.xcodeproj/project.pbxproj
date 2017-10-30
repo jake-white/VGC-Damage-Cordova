@@ -41,6 +41,10 @@
 		51ABFC49C2DC4437AC79AC45 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 265B5ACFDDF8421C85A29CE1 /* SafariServices.framework */; };
 		1D9F116C9E3847728CDDA807 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D361D5F0FD04471FA1BEDBB7 /* SystemConfiguration.framework */; };
 		D2C2E23047BA4D25AE77CF57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C7B53E5E9047D4940552AE /* UIKit.framework */; };
+		644E643F3C2A448DB152F5E8 /* InAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B15174BD98F4AD4999CC3CA /* InAppPurchase.m */; };
+		D36BBBC3456D4243B3117B09 /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E52BDB74943739728C7A0 /* SKProduct+LocalizedPrice.m */; };
+		156BFA4469E149FAADA91417 /* FileUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 71FAC740BC9B4C3680C1FE08 /* FileUtility.m */; };
+		A86F8BD336AD44A6A66245D3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095F309A9CDA4991996A4DCA /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +115,13 @@
 		265B5ACFDDF8421C85A29CE1 /* SafariServices.framework */ = {isa = PBXFileReference; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		D361D5F0FD04471FA1BEDBB7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		04C7B53E5E9047D4940552AE /* UIKit.framework */ = {isa = PBXFileReference; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		3B15174BD98F4AD4999CC3CA /* InAppPurchase.m */ = {isa = PBXFileReference; name = "InAppPurchase.m"; path = "cc.fovea.cordova.purchase/InAppPurchase.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		EA4E52BDB74943739728C7A0 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; name = "SKProduct+LocalizedPrice.m"; path = "cc.fovea.cordova.purchase/SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		71FAC740BC9B4C3680C1FE08 /* FileUtility.m */ = {isa = PBXFileReference; name = "FileUtility.m"; path = "cc.fovea.cordova.purchase/FileUtility.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		996D17DC5669492AA3B61BCD /* InAppPurchase.h */ = {isa = PBXFileReference; name = "InAppPurchase.h"; path = "cc.fovea.cordova.purchase/InAppPurchase.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		A6FDF389F6124D72977D8DA5 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; name = "SKProduct+LocalizedPrice.h"; path = "cc.fovea.cordova.purchase/SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		86CB19744346426C803D6FE8 /* FileUtility.h */ = {isa = PBXFileReference; name = "FileUtility.h"; path = "cc.fovea.cordova.purchase/FileUtility.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		095F309A9CDA4991996A4DCA /* StoreKit.framework */ = {isa = PBXFileReference; name = "StoreKit.framework"; path = "System/Library/Frameworks/StoreKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +152,7 @@
 				51ABFC49C2DC4437AC79AC45 /* SafariServices.framework in Frameworks */,
 				1D9F116C9E3847728CDDA807 /* SystemConfiguration.framework in Frameworks */,
 				D2C2E23047BA4D25AE77CF57 /* UIKit.framework in Frameworks */,
+				A86F8BD336AD44A6A66245D3 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +245,7 @@
 				265B5ACFDDF8421C85A29CE1 /* SafariServices.framework */,
 				D361D5F0FD04471FA1BEDBB7 /* SystemConfiguration.framework */,
 				04C7B53E5E9047D4940552AE /* UIKit.framework */,
+				095F309A9CDA4991996A4DCA /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,6 +279,12 @@
 				6A95D2CCDC4040F29F4F6C31 /* AdMobMediation.m */,
 				ABFDDADFA855424A9D05CF49 /* CDVAdMobPlugin.h */,
 				94799C9A06664F7BB5563272 /* AdMobMediation.h */,
+				3B15174BD98F4AD4999CC3CA /* InAppPurchase.m */,
+				EA4E52BDB74943739728C7A0 /* SKProduct+LocalizedPrice.m */,
+				71FAC740BC9B4C3680C1FE08 /* FileUtility.m */,
+				996D17DC5669492AA3B61BCD /* InAppPurchase.h */,
+				A6FDF389F6124D72977D8DA5 /* SKProduct+LocalizedPrice.h */,
+				86CB19744346426C803D6FE8 /* FileUtility.h */,
 			);
 			name = Plugins;
 			path = "VGC Damage Calculator/Plugins";
@@ -381,6 +400,9 @@
 				ECACBB861D494A81B4912E84 /* CDVPluginExt.m in Sources */,
 				D4C45DD1826442D58C40B3CD /* CDVAdMobPlugin.m in Sources */,
 				D7FCCF14D35B4E0CA9ADED76 /* AdMobMediation.m in Sources */,
+				644E643F3C2A448DB152F5E8 /* InAppPurchase.m in Sources */,
+				D36BBBC3456D4243B3117B09 /* SKProduct+LocalizedPrice.m in Sources */,
+				156BFA4469E149FAADA91417 /* FileUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
