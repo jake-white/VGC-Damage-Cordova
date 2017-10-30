@@ -22,6 +22,7 @@ function initializeStore() {
     }
     else {
       console.log("Not owned.");
+      console.log(store.get("pro").owned);
     }
 
     // When every goes as expected, it's time to celebrate!
