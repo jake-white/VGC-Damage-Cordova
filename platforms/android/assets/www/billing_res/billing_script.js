@@ -10,12 +10,10 @@ $('#noads_button').click(function(){
   });
 function initializeStore() {
 
-    // Let's set a pretty high verbosity level, so that we see a lot of stuff
-    // in the console (reassuring us that something is happening).
-    store.verbosity = store.INFO;
+    // Let's set a pretty low verbosity level
+    store.verbosity = store.ERROR;
 
-    // We register a dummy product. It's ok, it shouldn't
-    // prevent the store "ready" event from firing.
+    //here's the No Ads product
     store.register({
         id:    "no_ads",
         alias: "noads",

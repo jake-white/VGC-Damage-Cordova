@@ -28,9 +28,12 @@ function initApp() {
     bgColor: 'black'
   } );
 }
-
-if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
-    document.addEventListener('deviceready', initApp, false);
-} else {
-    initApp();
+function checkAds() {
+  if(!NO_ADS_OWNED) {
+    if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
+        document.addEventListener('deviceready', initApp, false);
+    } else {
+        initApp();
+    }
+  }
 }

@@ -281,9 +281,9 @@ function autosetStatus(p, item) {
 
 $(".status").bind("keyup change", function() {
     if ($(this).val() === 'Badly Poisoned') {
-        $(this).parent().children(".toxic-counter").show();
+        $(this).parent().children(".toxic-counter").removeClass("hide");
     } else {
-        $(this).parent().children(".toxic-counter").hide();
+        $(this).parent().children(".toxic-counter").addClass("hide");
     }
 });
 
@@ -297,10 +297,10 @@ $(".move-selector").change(function() {
     moveGroupObj.children(".move-cat").val(move.category);
     moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
     if (move.isMultiHit) {
-        moveGroupObj.children(".move-hits").show();
+        moveGroupObj.children(".move-hits").removeClass("hide");
         moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 : 3);
     } else {
-        moveGroupObj.children(".move-hits").hide();
+        moveGroupObj.children(".move-hits").addClass("hide");
     }
 });
 
@@ -376,11 +376,10 @@ $(".set-selector").change(function() {
             }
         }
         var formeObj = $(this).siblings().find(".forme").parent();
-        itemObj.prop("disabled", false);
         if (pokemon.formes) {
             showFormes(formeObj, setName, pokemonName, pokemon);
         } else {
-            formeObj.hide();
+            formeObj.addClass("hide");
         }
         calcHP(pokeObj);
         calcStats(pokeObj);
@@ -410,7 +409,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
     var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
     formeObj.children("select").find("option").remove().end().append(formeOptions).change();
-    formeObj.show();
+    formeObj.removeClass("hide");
 }
 
 function setSelectValueIfValid(select, value, fallback) {
@@ -817,8 +816,8 @@ $(".gen").change(function () {
             calcStat = CALC_STAT_ADV;
     }
     clearField();
-    $(".gen-specific.g" + gen).show();
-    $(".gen-specific").not(".g" + gen).hide();
+    $(".gen-specific.g" + gen).removeClass("hide");
+    $(".gen-specific").not(".g" + gen).addClass("hide");
     var typeOptions = getSelectOptions(Object.keys(typeChart));
     $("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
     $("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
