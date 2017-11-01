@@ -36,17 +36,17 @@ $(document).ready(function(){
   });
 </script>
 <body>
-    <div class="wrapper">
       <div class="before-title"></div>
+      <div class="pre-wrapper">
         <div class="title-text">
           <hr/>
-          <div >Pokémon Damage Calculator - VGC 2017 Edition</div>
+          <div>Pokémon VGC Damage Calculator</div>
           <input class="hide gen btn-input" type="radio" name="gen" value="7" id="gen7" checked="checked" /><label class="hide custombtn btn-small btn-right" for="gen7">S/M</label>
           <hr />
         </div>
+      </div>
 
-    <div align="center">
-    </div>
+<div class="wrapper">
         <div id="moveGroupTop" class="move-result-group" title="Select a move to show detailed results.">
             <div class="move-result-subgroup">
                 <div class="result-move-header"><span id="resultHeaderL">Pokemon 1's Moves (select one to show detailed results)</span></div>
@@ -460,15 +460,8 @@ $(document).ready(function(){
 
 
         <div class="footer" style="text-align: left">
-          <input class="btn-input" type="button" id="settings" /><label class="custombtn" for="settings" title="Settings">Settings</label>
-            <h2>Credits:</h2>
-            <ul class="list-group">
-              <li class="list-group-item">Main Dev/Mobile Dev: Jake White (<a href="https://twitter.com/squirrelboyVGC">@squirrelboyVGC</a>)</li>
-              <li class="list-group-item">Contributing Developers: Honko, gamut, Zarel, Tapin, Firestorm</li>
-              <li class="list-group-item">Art Assets by Benjamin Busche (<a href="https://twitter.com/pichuscute0">@pichuscute0</a>)</li>
-              <li class="list-group-item">Special Thanks to: <a href="http://nuggetbridge.com/">NuggetBridge</a> & <a href="https://trainertower.com">Trainer Tower</a></li>
-              <li class="list-group-item">Thanks to my many helpful Alpha & Beta testers!</li>
-            </ul>
+          <input class="btn-input" type="button" id="settings" /><label class="custombtn btn-wide" for="settings" title="Settings">Tab Settings</label>
+          <input class="btn-input" type="button" id="credits" /><label class="custombtn btn-wide" for="credits" title="Credits">Credits</label>
             <h3>This is neat. How do I support you?</h3>
             <ul class="list-group">
               <p>Hey, thanks! My VGC tools will <i>always</i> be open source and free for the community to use. However, I would appreciate any of the following!<p>
@@ -478,13 +471,23 @@ $(document).ready(function(){
               <li class="list-group-item">Turn off adblock when viewing the browser versions of my tools.</li>
             </ul>
         </div>
-        <div id="settings_dialog" title="Settings">
+        <div id="settings_dialog" title="Tab Settings">
           <p>Warning: 'No Tab' configuration is intended for landscape mode and/or large screen sizes.</p>
           <div class="gen-specific g3 g4 g5 g6 g7" style="text-align: center; width: 100%; margin: 0 auto 5px;" title="Select the tab configuration.">
               <input class="btn-input calc-trigger" type="radio" name="tabconfig" value="Singles" id="notabs" /><label class="custombtn btn-left" for="notabs">No Tabs</label>
               <input class="btn-input calc-trigger" type="radio" name="tabconfig" value="Doubles" id="standardtabs"  checked="checked"/><label class="custombtn btn-mid" for="standardtabs">Standard</label>
               <input class="btn-input calc-trigger" type="radio" name="tabconfig" value="Doubles" id="alltabs" /><label class="custombtn btn-right" for="alltabs">All Tabs</label>
           </div>
+        </div>
+        <div id="credits_dialog" title="Credits">
+          <h2>Credits:</h2>
+          <ul class="list-group">
+            <li class="list-group-item">Main Dev/Mobile Dev: Jake White (<a href="https://twitter.com/squirrelboyVGC">@squirrelboyVGC</a>)</li>
+            <li class="list-group-item">Contributing Developers: Honko, gamut, Zarel, Tapin, Firestorm</li>
+            <li class="list-group-item">Art Assets by Benjamin Busche (<a href="https://twitter.com/pichuscute0">@pichuscute0</a>)</li>
+            <li class="list-group-item">Special Thanks to: <a href="http://nuggetbridge.com/">NuggetBridge</a> & <a href="https://trainertower.com">Trainer Tower</a></li>
+            <li class="list-group-item">Thanks to my many helpful Alpha & Beta testers!</li>
+          </ul>
         </div>
     </body>
     <script type="text/javascript" src="billing_res/billing_script.js"></script>

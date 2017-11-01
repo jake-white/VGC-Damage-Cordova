@@ -26,6 +26,11 @@ $(document).ready(function(){
         $("#settings_dialog").dialog();
       });
     });
+    $("#credits").click(function() {
+      $('html, body').animate({ scrollTop: 0 }, 'fast', function() {
+        $("#credits_dialog").dialog();
+      });
+    });
 
     $("#notabs").click(function() {
       if(TAB_CONFIG != 1) {
@@ -41,6 +46,7 @@ $(document).ready(function(){
         $('#p2Tab').removeClass('tab-pane fade in active');
       }
       regenMoves();
+      stickyMoves.regenStickyMoves();
     });
 
     $("#standardtabs").click(function() {
@@ -66,6 +72,7 @@ $(document).ready(function(){
         $('#p2Tab').addClass('tab-pane fade');
       }
       regenMoves();
+      stickyMoves.regenStickyMoves();
     });
 
     $("#alltabs").click(function() {
@@ -91,6 +98,7 @@ $(document).ready(function(){
         $('#p2Tab').addClass('tab-pane fade');
       }
       regenMoves();
+      stickyMoves.regenStickyMoves();
     });
 
   });

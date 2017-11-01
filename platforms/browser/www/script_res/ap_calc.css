@@ -17,8 +17,12 @@
   background: #A5EDA7;
 }
 
-#settings_dialog {
+#settings_dialog, #credits_dialog {
   display: none;
+}
+
+#credits_dialog a {
+  color: #337ab7;
 }
 
 .settingscheckbox {
@@ -40,6 +44,7 @@
 .plus, .minus {
   text-align: center;
   width: 1.5em;
+  margin: 0.4em;
 }
 
 table {
@@ -69,10 +74,12 @@ th {
 
 .title-text {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
+    width: 100%;
 }
 
 .before-title {
+  padding: 0em;
   padding-bottom: 3em;
   background-color: #1e3864;
 }

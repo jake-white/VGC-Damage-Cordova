@@ -597,6 +597,16 @@ var stickyMoves = (function () {
     });
 
     return {
+        regenStickyMoves: function() {
+          $(".result-move").click(function () {
+              if (this.id === lastClicked) {
+                  $(this).toggleClass("locked-move");
+              } else {
+                  $('.locked-move').removeClass('locked-move');
+              }
+              lastClicked = this.id;
+          });
+        },
         clearStickyMove: function () {
             lastClicked = null;
             $('.locked-move').removeClass('locked-move');
@@ -668,20 +678,32 @@ function Pokemon(pokeInfo) {
 }
 
 function increaseStat(statstring, pokeInfo) {
-  console.log(statstring);
-    var evs = ~~pokeInfo.find("." + statstring + " .evs").val();
+  var evs = ~~pokeInfo.find("." + statstring + " .evs").val();
   if(evs < 249)
     pokeInfo.find("." + statstring+" .evs").val(evs+4);
   else
     pokeInfo.find("." + statstring+" .evs").val(252);
+
+  if(statstring == "hp")
+    calcHP(pokeInfo);
+  else
+    calcStat(pokeInfo, statstring);
+
+  calcEvTotal(pokeInfo);
 }
 
 function decreaseStat(statstring, pokeInfo) {
-    var evs = ~~pokeInfo.find("." + statstring + " .evs").val();
+  var evs = ~~pokeInfo.find("." + statstring + " .evs").val();
   if(evs > 3)
     pokeInfo.find("." + statstring+" .evs").val(evs-4);
   else
     pokeInfo.find("." + statstring+" .evs").val(0);
+  if(statstring == "hp")
+    calcHP(pokeInfo);
+  else
+    calcStat(pokeInfo, statstring);
+
+  calcEvTotal(pokeInfo);
 }
 
 function getMoveDetails(moveInfo) {
