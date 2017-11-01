@@ -44,7 +44,7 @@
 .plus, .minus {
   text-align: center;
   width: 1.5em;
-  margin: 0.4em;
+  margin: 0.1em;
 }
 
 table {
@@ -105,7 +105,7 @@ th {
     width: 100%;
 }
 .field-info {
-    width: 90%
+    width: 100%
 }
 .generations {
     padding-left: 1em;
