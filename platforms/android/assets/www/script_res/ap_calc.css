@@ -17,6 +17,36 @@
   background: #A5EDA7;
 }
 
+#settings_dialog {
+  display: none;
+}
+
+.settingscheckbox {
+  vertical-align: middle;
+  padding: 5px;
+}
+
+#p1Tab:not(.tab-pane), #fieldTab:not(.tab-pane), #p2Tab:not(.tab-pane) {
+  float: left;
+  display: inline-block;
+  width: 33%;
+}
+
+
+.hiddenTab {
+  display:none;
+}
+
+.plus, .minus {
+  text-align: center;
+  width: 1.5em;
+}
+
+table {
+  max-width: 100%;
+  display: inline-block;
+}
+
 /* general page styling */
 body {
     width: 100%;
@@ -36,11 +66,15 @@ th, td {
 th {
     font-size: 0.8em;
 }
+
 .title-text {
     font-weight: bold;
     font-size: 1.5em;
-    height: 50px;
-    margin-top: 10px;
+}
+
+.before-title {
+  padding-bottom: 3em;
+  background-color: #1e3864;
 }
 .yeartag {
     margin-right: 1em;
@@ -200,7 +234,7 @@ th {
 }
 .info-selectors select {
     align-self: center;
-    width: 30%;
+    width: 70%;
 }
 select.toxic-counter {
     width: 4.5em;

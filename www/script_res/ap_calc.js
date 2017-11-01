@@ -563,20 +563,25 @@ function calculate() {
     $("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
 }
 
-$(".result-move").change(function() {
-    if (damageResults) {
-        var result = findDamageResult($(this));
-        if (result) {
-            $("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
-            if (result.parentDamage) {
-                $("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
-                    "; Second hit: " + result.childDamage.join(", ") + ")");
-            } else {
-                $("#damageValues").text("(" + result.damage.join(", ") + ")");
-            }
-        }
-    }
-});
+
+function regenMoves() {
+  $(".result-move").change(function() {
+      if (damageResults) {
+          var result = findDamageResult($(this));
+          if (result) {
+              $("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
+              if (result.parentDamage) {
+                  $("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
+                      "; Second hit: " + result.childDamage.join(", ") + ")");
+              } else {
+                  $("#damageValues").text("(" + result.damage.join(", ") + ")");
+              }
+          }
+      }
+  });
+}
+
+regenMoves();
 
 // Need to close over "lastClicked", so we'll do it the old-fashioned way to avoid
 // needlessly polluting the global namespace.
@@ -646,6 +651,8 @@ function Pokemon(pokeInfo) {
         this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
         this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
     }
+
+
     this.nature = pokeInfo.find(".nature").val();
     this.ability = pokeInfo.find(".ability").val();
     this.item = pokeInfo.find(".item").val();
@@ -658,6 +665,23 @@ function Pokemon(pokeInfo) {
         getMoveDetails(pokeInfo.find(".move4"))
     ];
     this.weight = +pokeInfo.find(".weight").val();
+}
+
+function increaseStat(statstring, pokeInfo) {
+  console.log(statstring);
+    var evs = ~~pokeInfo.find("." + statstring + " .evs").val();
+  if(evs < 249)
+    pokeInfo.find("." + statstring+" .evs").val(evs+4);
+  else
+    pokeInfo.find("." + statstring+" .evs").val(252);
+}
+
+function decreaseStat(statstring, pokeInfo) {
+    var evs = ~~pokeInfo.find("." + statstring + " .evs").val();
+  if(evs > 3)
+    pokeInfo.find("." + statstring+" .evs").val(evs-4);
+  else
+    pokeInfo.find("." + statstring+" .evs").val(0);
 }
 
 function getMoveDetails(moveInfo) {
@@ -925,10 +949,13 @@ function getSelectOptions(arr, sort, defaultIdx) {
 }
 
 $(document).ready(function() {
+    plusMinusButtons();
     $("#gen7").prop("checked", true);
     $("#gen7").change();
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
     $(".calc-trigger").bind("change keyup", calculate);
+    $(".plus").bind("click", calculate);
+    $(".minus").bind("click", calculate);
     $(".set-selector").select2({
         formatResult: function(object) {
             return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");
