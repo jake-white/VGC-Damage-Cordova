@@ -55,7 +55,7 @@ table {
 /* general page styling */
 body {
     width: 100%;
-    font: 10pt Verdana, sans-serif;
+    font: 12pt Verdana, sans-serif;
     background-color: #bbeedd;
 }
 fieldset {
@@ -221,7 +221,7 @@ th {
 /* pokemon info */
 .poke-info label {
     display: inline-block;
-    width: 6em;
+    width: 4.5em;
 }
 .poke-info input:not([type]), .poke-info input[type="text"],
  .poke-info evs, .poke-info ivs, .poke-info base, .poke-info level, .poke-info move-bp {
@@ -230,7 +230,7 @@ th {
 }
 .poke-info input[type="number"] {
     display: inline-block;
-    width: 3em;
+    width: 2.5em;
 }
 .info-group {
     align-self: center;
@@ -241,7 +241,7 @@ th {
 }
 .info-selectors select {
     align-self: center;
-    width: 70%;
+    width: 60%;
 }
 select.toxic-counter {
     width: 4.5em;
@@ -272,7 +272,7 @@ select.toxic-counter {
     margin-left: 1px;
     margin-right: 1px;
 }
-.poke-info .ev-total {
+.poke-info .ev-total, .poke-info .ev-left {
     font-size: 0.8em;
 }
 
