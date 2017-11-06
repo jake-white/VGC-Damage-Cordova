@@ -44,6 +44,8 @@ $(document).ready(function(){
         $('#p1Tab').removeClass('tab-pane fade in active');
         $('#fieldTab').removeClass('tab-pane fade in active');
         $('#p2Tab').removeClass('tab-pane fade in active');
+
+        $('.container').after($('#fieldTab'));
       }
       regenMoves();
       stickyMoves.regenStickyMoves();
@@ -70,6 +72,8 @@ $(document).ready(function(){
         $('#p1Tab').addClass('tab-pane fade in active');
         $('#fieldTab').addClass('tab-pane fade');
         $('#p2Tab').addClass('tab-pane fade');
+
+        $('#p1Tab').after($('#fieldTab'));
       }
       regenMoves();
       stickyMoves.regenStickyMoves();
@@ -96,6 +100,8 @@ $(document).ready(function(){
         $('#p1Tab').addClass('tab-pane fade');
         $('#fieldTab').addClass('tab-pane fade');
         $('#p2Tab').addClass('tab-pane fade');
+
+        $('#p1Tab').after($('#fieldTab'));
       }
       regenMoves();
       stickyMoves.regenStickyMoves();

@@ -37,3 +37,7 @@ function checkAds() {
     }
   }
 }
+
+document.addEventListener('onAdFailLoad', function(e){
+    setTimeout(checkAds, 15000);
+});

@@ -23,14 +23,17 @@ function initApp() {
     adId: admobid.banner,
     position: AdMob.AD_POSITION.TOP_CENTER,
     isTesting: false, // TODO: remove this line when release
-    overlap: false,
+    overlap: true,
     offsetTopBar: false,
     bgColor: 'black'
   } );
 }
-
-if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
-    document.addEventListener('deviceready', initApp, false);
-} else {
-    initApp();
+function checkAds() {
+  if(!NO_ADS_OWNED) {
+    if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
+        document.addEventListener('deviceready', initApp, false);
+    } else {
+        initApp();
+    }
+  }
 }

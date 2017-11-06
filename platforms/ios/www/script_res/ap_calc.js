@@ -106,8 +106,15 @@ function calcEvTotal(poke) {
 
     var newClass = total > 510 ? 'overLimit' : 'underLimit';
 
+    var left = 510-total;
+
+    var newClassLeft = left < 0 ? 'overLimit' : 'underLimit';
+
     var evTotal = poke.find('.ev-total');
     evTotal.removeClass('underLimit overLimit').text(total).addClass(newClass);
+
+    var evLeft = poke.find('.ev-left');
+    evLeft.removeClass('underLimit overLimit').text(left).addClass(newClassLeft);
 }
 
 function calcCurrentHP(poke, max, percent) {
@@ -281,9 +288,9 @@ function autosetStatus(p, item) {
 
 $(".status").bind("keyup change", function() {
     if ($(this).val() === 'Badly Poisoned') {
-        $(this).parent().children(".toxic-counter").show();
+        $(this).parent().children(".toxic-counter").removeClass("hide");
     } else {
-        $(this).parent().children(".toxic-counter").hide();
+        $(this).parent().children(".toxic-counter").addClass("hide");
     }
 });
 
@@ -297,10 +304,10 @@ $(".move-selector").change(function() {
     moveGroupObj.children(".move-cat").val(move.category);
     moveGroupObj.children(".move-crit").prop("checked", move.alwaysCrit === true);
     if (move.isMultiHit) {
-        moveGroupObj.children(".move-hits").show();
+        moveGroupObj.children(".move-hits").removeClass("hide");
         moveGroupObj.children(".move-hits").val($(this).closest(".poke-info").find(".ability").val() === 'Skill Link' ? 5 : 3);
     } else {
-        moveGroupObj.children(".move-hits").hide();
+        moveGroupObj.children(".move-hits").addClass("hide");
     }
 });
 
@@ -376,11 +383,10 @@ $(".set-selector").change(function() {
             }
         }
         var formeObj = $(this).siblings().find(".forme").parent();
-        itemObj.prop("disabled", false);
         if (pokemon.formes) {
             showFormes(formeObj, setName, pokemonName, pokemon);
         } else {
-            formeObj.hide();
+            formeObj.addClass("hide");
         }
         calcHP(pokeObj);
         calcStats(pokeObj);
@@ -410,7 +416,7 @@ function showFormes(formeObj, setName, pokemonName, pokemon) {
 
     var formeOptions = getSelectOptions(pokemon.formes, false, defaultForme);
     formeObj.children("select").find("option").remove().end().append(formeOptions).change();
-    formeObj.show();
+    formeObj.removeClass("hide");
 }
 
 function setSelectValueIfValid(select, value, fallback) {
@@ -564,20 +570,25 @@ function calculate() {
     $("#resultHeaderR").text(p2.name + "'s Moves (select one to show detailed results)");
 }
 
-$(".result-move").change(function() {
-    if (damageResults) {
-        var result = findDamageResult($(this));
-        if (result) {
-            $("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
-            if (result.parentDamage) {
-                $("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
-                    "; Second hit: " + result.childDamage.join(", ") + ")");
-            } else {
-                $("#damageValues").text("(" + result.damage.join(", ") + ")");
-            }
-        }
-    }
-});
+
+function regenMoves() {
+  $(".result-move").change(function() {
+      if (damageResults) {
+          var result = findDamageResult($(this));
+          if (result) {
+              $("#mainResult").html(result.description + ": " + result.damageText + " -- " + result.koChanceText);
+              if (result.parentDamage) {
+                  $("#damageValues").text("(First hit: " + result.parentDamage.join(", ") +
+                      "; Second hit: " + result.childDamage.join(", ") + ")");
+              } else {
+                  $("#damageValues").text("(" + result.damage.join(", ") + ")");
+              }
+          }
+      }
+  });
+}
+
+regenMoves();
 
 // Need to close over "lastClicked", so we'll do it the old-fashioned way to avoid
 // needlessly polluting the global namespace.
@@ -593,6 +604,16 @@ var stickyMoves = (function () {
     });
 
     return {
+        regenStickyMoves: function() {
+          $(".result-move").click(function () {
+              if (this.id === lastClicked) {
+                  $(this).toggleClass("locked-move");
+              } else {
+                  $('.locked-move').removeClass('locked-move');
+              }
+              lastClicked = this.id;
+          });
+        },
         clearStickyMove: function () {
             lastClicked = null;
             $('.locked-move').removeClass('locked-move');
@@ -647,6 +668,8 @@ function Pokemon(pokeInfo) {
         this.boosts[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .boost").val();
         this.evs[STATS[i]] = ~~pokeInfo.find("." + STATS[i] + " .evs").val();
     }
+
+
     this.nature = pokeInfo.find(".nature").val();
     this.ability = pokeInfo.find(".ability").val();
     this.item = pokeInfo.find(".item").val();
@@ -659,6 +682,35 @@ function Pokemon(pokeInfo) {
         getMoveDetails(pokeInfo.find(".move4"))
     ];
     this.weight = +pokeInfo.find(".weight").val();
+}
+
+function increaseStat(statstring, pokeInfo) {
+  var evs = ~~pokeInfo.find("." + statstring + " .evs").val();
+  if(evs < 249)
+    pokeInfo.find("." + statstring+" .evs").val(evs+4);
+  else
+    pokeInfo.find("." + statstring+" .evs").val(252);
+
+  if(statstring == "hp")
+    calcHP(pokeInfo);
+  else
+    calcStat(pokeInfo, statstring);
+
+  calcEvTotal(pokeInfo);
+}
+
+function decreaseStat(statstring, pokeInfo) {
+  var evs = ~~pokeInfo.find("." + statstring + " .evs").val();
+  if(evs > 3)
+    pokeInfo.find("." + statstring+" .evs").val(evs-4);
+  else
+    pokeInfo.find("." + statstring+" .evs").val(0);
+  if(statstring == "hp")
+    calcHP(pokeInfo);
+  else
+    calcStat(pokeInfo, statstring);
+
+  calcEvTotal(pokeInfo);
 }
 
 function getMoveDetails(moveInfo) {
@@ -817,8 +869,8 @@ $(".gen").change(function () {
             calcStat = CALC_STAT_ADV;
     }
     clearField();
-    $(".gen-specific.g" + gen).show();
-    $(".gen-specific").not(".g" + gen).hide();
+    $(".gen-specific.g" + gen).removeClass("hide");
+    $(".gen-specific").not(".g" + gen).addClass("hide");
     var typeOptions = getSelectOptions(Object.keys(typeChart));
     $("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
     $("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
@@ -926,10 +978,13 @@ function getSelectOptions(arr, sort, defaultIdx) {
 }
 
 $(document).ready(function() {
+    plusMinusButtons();
     $("#gen7").prop("checked", true);
     $("#gen7").change();
     $(".terrain-trigger").bind("change keyup", getTerrainEffects);
     $(".calc-trigger").bind("change keyup", calculate);
+    $(".plus").bind("click", calculate);
+    $(".minus").bind("click", calculate);
     $(".set-selector").select2({
         formatResult: function(object) {
             return object.set ? ("&nbsp;&nbsp;&nbsp;" + object.set) : ("<b>" + object.text + "</b>");

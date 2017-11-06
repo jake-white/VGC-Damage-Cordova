@@ -30,12 +30,11 @@
   padding: 5px;
 }
 
-#p1Tab:not(.tab-pane), #fieldTab:not(.tab-pane), #p2Tab:not(.tab-pane) {
+#p1Tab:not(.tab-pane), .tab-content#fieldTab, #p2Tab:not(.tab-pane) {
   float: left;
   display: inline-block;
-  width: 33%;
+  width: 50%;
 }
-
 
 .hiddenTab {
   display:none;
