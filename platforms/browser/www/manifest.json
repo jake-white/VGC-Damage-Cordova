@@ -36,6 +36,36 @@
       "src": "res/icon/android/196.png",
       "type": "image/png",
       "sizes": "196x196"
+    },
+    {
+      "src": "res/icon/ios/48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "res/icon/ios/64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "res/icon/ios/72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "res/icon/ios/96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "res/icon/ios/144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "res/icon/ios/196.png",
+      "type": "image/png",
+      "sizes": "196x196"
     }
   ],
   "start_url": "index.html"

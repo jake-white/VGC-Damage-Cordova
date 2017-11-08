@@ -39,5 +39,5 @@ function checkAds() {
 }
 
 document.addEventListener('onAdFailLoad', function(e){
-    setTimeout(checkAds, 2000);
+    setTimeout(checkAds, 15000);
 });
