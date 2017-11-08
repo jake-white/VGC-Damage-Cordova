@@ -1,8 +1,3 @@
-var storage = window.localStorage;
-var key="";
-storage.setItem(key, value); // Pass a key name and its value to add or update that key.
-storage.removeItem(key); // Pass a key name to remove that key from storage.
-var value = storage.getItem(key); // Pass a key name to get its value.
 var moveGroup = `
 <div class="move-result-subgroup" style="display:inline-block;">
   <div class="result-move-header"><span id="resultHeaderL">Pokemon 1's Moves (select one to show detailed results)</span></div>
@@ -19,7 +14,81 @@ var moveGroup = `
   <div><input class="result-move btn-input" type="radio" name="resultMove" id="resultMoveR4" /><label class="custombtn btn-xxxwide btn-bottom" for="resultMoveR4">Tombstoner</label> <span id="resultDamageR4">??? - ???%</span></div>
 </div>`
 
-var TAB_CONFIG = 2;
+var storage = window.localStorage;
+var TAB_CONFIG = 1;
+var notabs = function() {
+  storage.setItem("TAB_CONFIG", TAB_CONFIG);
+  $('#moveGroupTop').html(moveGroup);
+  $('#moveTab').html("");
+  $('.nav-tabs').hide();
+  $('#moveTabTop').hide()
+
+  $('#moveTab').removeClass('tab-pane active');
+  $('#p1Tab').removeClass('tab-pane fade in active');
+  $('#fieldTab').removeClass('tab-pane fade in active');
+  $('#p2Tab').removeClass('tab-pane fade in active');
+
+  $('.container').after($('#fieldTab'));
+
+  regenMoves();
+  stickyMoves.regenStickyMoves();
+}
+
+var standardtabs = function() {
+  storage.setItem("TAB_CONFIG", TAB_CONFIG);
+  $('#moveGroupTop').html(moveGroup);
+  $('#moveTab').html("");
+  $('.nav-tabs').show();
+  $('#moveTabTop').hide();
+
+
+  $('#moveTabTop').removeClass("active");
+  $('#fieldTabTop').removeClass("active");
+  $('#p2TabTop').removeClass("active");
+  $('#moveTab').removeClass('tab-pane fade in active');
+  $('#fieldTab').removeClass('tab-pane fade in active');
+  $('#p2Tab').removeClass('tab-pane fade in active');
+
+
+  $('#p1TabTop').addClass("active");
+  $('#p1Tab').addClass('tab-pane fade in active');
+  $('#fieldTab').addClass('tab-pane fade');
+  $('#p2Tab').addClass('tab-pane fade');
+
+  $('#p1Tab').after($('#fieldTab'));
+  regenMoves();
+  stickyMoves.regenStickyMoves();
+}
+
+var alltabs = function() {
+  storage.setItem("TAB_CONFIG", TAB_CONFIG);
+  $('#moveTabTop').addClass("active");
+  $('#p1TabTop').removeClass("active");
+  $('#fieldTabTop').removeClass("active");
+  $('#p2TabTop').removeClass("active");
+
+  $('#moveGroupTop').html("");
+  $('#moveTab').html(moveGroup);
+  $('.nav-tabs').show();
+  $('#moveTabTop').show();
+
+  $('#p1Tab').removeClass('tab-pane fade in active');
+  $('#fieldTab').removeClass('tab-pane fade in active');
+  $('#p2Tab').removeClass('tab-pane fade in active');
+
+  $('#moveTab').addClass('tab-pane fade in active');
+  $('#p1Tab').addClass('tab-pane fade');
+  $('#fieldTab').addClass('tab-pane fade');
+  $('#p2Tab').addClass('tab-pane fade');
+
+  $('#p1Tab').after($('#fieldTab'));
+
+  regenMoves();
+  stickyMoves.regenStickyMoves();
+}
+
+var TAB_PROCEDURES = [notabs, standardtabs, alltabs];
+
 $(document).ready(function(){
     $("#settings").click(function() {
       $('html, body').animate({ scrollTop: 0 }, 'fast', function() {
@@ -33,72 +102,29 @@ $(document).ready(function(){
     });
 
     $("#notabs").click(function() {
-      if(TAB_CONFIG != 1) {
-        TAB_CONFIG = 1;
-        $('#moveGroupTop').html(moveGroup);
-        $('#moveTab').html("");
-        $('.nav-tabs').hide();
-        $('#moveTabTop').hide()
-
-        $('#moveTab').removeClass('tab-pane active');
-        $('#p1Tab').removeClass('tab-pane fade in active');
-        $('#fieldTab').removeClass('tab-pane fade in active');
-        $('#p2Tab').removeClass('tab-pane fade in active');
-      }
-      regenMoves();
-      stickyMoves.regenStickyMoves();
+      TAB_CONFIG = 0;
+      notabs();
+      calculate();
     });
 
     $("#standardtabs").click(function() {
-      if(TAB_CONFIG != 2) {
-        TAB_CONFIG = 2;
-        $('#moveGroupTop').html(moveGroup);
-        $('#moveTab').html("");
-        $('.nav-tabs').show();
-        $('#moveTabTop').hide();
-
-
-        $('#moveTabTop').removeClass("active");
-        $('#fieldTabTop').removeClass("active");
-        $('#p2TabTop').removeClass("active");
-        $('#moveTab').removeClass('tab-pane fade in active');
-        $('#fieldTab').removeClass('tab-pane fade in active');
-        $('#p2Tab').removeClass('tab-pane fade in active');
-
-
-        $('#p1TabTop').addClass("active");
-        $('#p1Tab').addClass('tab-pane fade in active');
-        $('#fieldTab').addClass('tab-pane fade');
-        $('#p2Tab').addClass('tab-pane fade');
-      }
-      regenMoves();
-      stickyMoves.regenStickyMoves();
+      TAB_CONFIG = 1;
+      standardtabs();
+      calculate();
     });
 
     $("#alltabs").click(function() {
-      if(TAB_CONFIG != 3) {
-        TAB_CONFIG = 3;
-        $('#moveTabTop').addClass("active");
-        $('#p1TabTop').removeClass("active");
-        $('#fieldTabTop').removeClass("active");
-        $('#p2TabTop').removeClass("active");
-
-        $('#moveGroupTop').html("");
-        $('#moveTab').html(moveGroup);
-        $('.nav-tabs').show();
-        $('#moveTabTop').show();
-
-        $('#p1Tab').removeClass('tab-pane fade in active');
-        $('#fieldTab').removeClass('tab-pane fade in active');
-        $('#p2Tab').removeClass('tab-pane fade in active');
-
-        $('#moveTab').addClass('tab-pane fade in active');
-        $('#p1Tab').addClass('tab-pane fade');
-        $('#fieldTab').addClass('tab-pane fade');
-        $('#p2Tab').addClass('tab-pane fade');
-      }
-      regenMoves();
-      stickyMoves.regenStickyMoves();
+      TAB_CONFIG = 2;
+      alltabs();
+      calculate();
     });
+
+    TAB_CONFIG = storage.getItem("TAB_CONFIG");
+    if(TAB_CONFIG == null) {
+      TAB_CONFIG = 1;
+    }
+    else {
+      TAB_PROCEDURES[TAB_CONFIG]();
+    }
 
   });

@@ -5,17 +5,19 @@ var  NO_ADS_OWNED = false;
 document.addEventListener('deviceready', initializeStore, false);
 $('#noads_button').click(function(){
     if(!NO_ADS_OWNED) {
+      console.log("no ads clicked");
       store.order("noads");
     }
   });
 function initializeStore() {
+    console.log("store initialized.");
 
     // Let's set a pretty low verbosity level
-    store.verbosity = store.ERROR;
+    store.verbosity = store.INFO;
 
     //here's the No Ads product
     store.register({
-        id:    "no_ads",
+        id:    "remove_ads",
         alias: "noads",
         type: store.NON_CONSUMABLE
     });
