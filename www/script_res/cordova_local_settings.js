@@ -32,7 +32,6 @@ var notabs = function() {
 
   regenMoves();
   stickyMoves.regenStickyMoves();
-  calculate();
 }
 
 var standardtabs = function() {
@@ -59,7 +58,6 @@ var standardtabs = function() {
   $('#p1Tab').after($('#fieldTab'));
   regenMoves();
   stickyMoves.regenStickyMoves();
-  calculate();
 }
 
 var alltabs = function() {
@@ -87,7 +85,6 @@ var alltabs = function() {
 
   regenMoves();
   stickyMoves.regenStickyMoves();
-  calculate();
 }
 
 var TAB_PROCEDURES = [notabs, standardtabs, alltabs];
@@ -105,15 +102,21 @@ $(document).ready(function(){
     });
 
     $("#notabs").click(function() {
+      TAB_CONFIG = 0;
       notabs();
+      calculate();
     });
 
     $("#standardtabs").click(function() {
+      TAB_CONFIG = 1;
       standardtabs();
+      calculate();
     });
 
     $("#alltabs").click(function() {
+      TAB_CONFIG = 2;
       alltabs();
+      calculate();
     });
 
     TAB_CONFIG = storage.getItem("TAB_CONFIG");
