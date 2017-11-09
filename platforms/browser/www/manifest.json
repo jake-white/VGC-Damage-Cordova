@@ -3,7 +3,7 @@
   "display": "standalone",
   "name": "VGC Damage Calculator",
   "short_name": "VGC Damage Calculator",
-  "version": "com.whitejaa.damage",
+  "version": "com.whitejaa.calc",
   "description": "Pokémon damage calculator designed for the VGC format.",
   "author": "Jake White",
   "icons": [

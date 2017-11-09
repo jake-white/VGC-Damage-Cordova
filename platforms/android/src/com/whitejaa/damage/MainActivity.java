@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.whitejaa.damage;
+package com.whitejaa.calc;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="10020" id="com.whitejaa.damage" version="Beta v0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="10020" id="com.whitejaa.calc" version="Beta v0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>VGC Damage Calculator</name>
     <description>
         Pokémon damage calculator designed for the VGC format.
@@ -36,8 +36,8 @@
     <icon height="176" platform="ios" src="res/icon/ios/176.png" width="176" />
     <icon height="180" platform="ios" src="res/icon/ios/180.png" width="180" />
     <engine name="android" spec="^6.3.0" />
-    <engine name="ios" spec="^4.5.2" />
     <engine name="browser" spec="^5.0.1" />
+    <engine name="ios" spec="^4.5.3" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="cordova-plugin-admobpro" spec="^2.29.24" />
     <plugin name="cc.fovea.cordova.purchase" spec="^7.0.2">

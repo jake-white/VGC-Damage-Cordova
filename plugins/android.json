@@ -8,19 +8,19 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.whitejaa.damage"
+      "PACKAGE_NAME": "com.whitejaa.calc"
     },
     "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "com.whitejaa.damage"
+      "PACKAGE_NAME": "com.whitejaa.calc"
     },
     "cc.fovea.cordova.purchase": {
       "BILLING_KEY": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkY5+td5i0VKwZN6jY062OcD0dRlK9ToIz4UhzSgPfWMA8hQcSDBLhU1zoThhMvvCXd3mjmYLDxM7c92la29KtLm5Z+QNNJEDYxlIUfkvc9eRi8Z3O6mmGtUCmFB8WGS35CvtNdhzxqRIgC9Y1WO1S1Gvzy7Xi+o//5fRPBOKOoN7qZggkHXWZnGy/2QUiwykI/i1Z3uURsPAC9R+bPiUa2B0mAcGhJQOPOAULZsq2HXatqpIz/KUGZyBriA3nxmfu56DjIXhH0VG74NSaXemj5jdjiAM2t2k33pd28RYtDib9aHbUn936QMTI9jMap8xCA7iZjH9HGer2E3dHRtxzQIDAQAB",
-      "PACKAGE_NAME": "com.whitejaa.damage"
+      "PACKAGE_NAME": "com.whitejaa.calc"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.whitejaa.damage"
+      "PACKAGE_NAME": "com.whitejaa.calc"
     }
   }
 }

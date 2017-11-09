@@ -23,6 +23,7 @@
     <script src="jquery-3.2.1.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
   </head>
   <script>
     $(document).ready(function(){
@@ -1007,9 +1008,9 @@
       </ul>
     </div>
   </body>
-  <script type="text/javascript" src="billing_res/billing_script.js"></script>
   <script type="text/javascript" src="admob_simple.js"></script>
   <script type="text/javascript" src="cordova.js"></script>
+  <body onload="onLoad()"></body>
   <script type="text/javascript" src="select2/select2-touch.js"></script>
   <script type="text/javascript" src="script_res/cordova_local_settings.js"></script>
   <script type="text/javascript" src="script_res/pokedex.js"></script>

@@ -8,13 +8,13 @@
   },
   "installed_plugins": {
     "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.whitejaa.damage"
+      "PACKAGE_NAME": "com.whitejaa.calc"
     },
     "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "com.whitejaa.damage"
+      "PACKAGE_NAME": "com.whitejaa.calc"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.whitejaa.damage"
+      "PACKAGE_NAME": "com.whitejaa.calc"
     },
     "cc.fovea.cordova.purchase": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
