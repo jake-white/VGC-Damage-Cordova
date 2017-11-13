@@ -37,7 +37,7 @@
 		A9F57DD2AA4F41D6A4BF54C0 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C955440EEA4360877BC1F4 /* SafariServices.framework */; };
 		BFAA296C95D646DF909DB752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B22E5E49B348A58F695A74 /* Foundation.framework */; };
 		C048A0F1454F4E48A725D450 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3411D8D41A78411A80B6F1DD /* MediaPlayer.framework */; };
-		CB0157B796774C6D9D8007CB /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC6B1B20F81478E90EA0972 /* GLKit.framework */; };
+		CB0157B796774C6D9D8007CB /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC6B1B20F81478E90EA0972 /* GLKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D8AC3BDD66924D41A5EC4D76 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8981B17C9B1B41E2AA917F1E /* GoogleMobileAds.framework */; };
 		E0B2CDE17DEB495BB027C47D /* CDVAdMobPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2CCDF103EF4A9EADAA254B /* CDVAdMobPlugin.m */; };
 		EAA5979359864D9AB6AA41CE /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65EF6FAA1AFA46368B10B120 /* EventKitUI.framework */; };
@@ -484,8 +484,15 @@
 				GCC_PREFIX_HEADER = "VGC Damage Calculator/VGC Damage Calculator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+					"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include",
+				);
 				INFOPLIST_FILE = "VGC Damage Calculator/VGC Damage Calculator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,8 +527,15 @@
 				GCC_PREFIX_HEADER = "VGC Damage Calculator/VGC Damage Calculator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+					"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include",
+				);
 				INFOPLIST_FILE = "VGC Damage Calculator/VGC Damage Calculator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -554,8 +568,15 @@
 				GCC_PREFIX_HEADER = "VGC Damage Calculator/VGC Damage Calculator-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = (
+					"\"$(TARGET_BUILD_DIR)/usr/local/lib/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/include\"",
+					"\"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include\"",
+					"\"$(BUILT_PRODUCTS_DIR)\"",
+					"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include",
+				);
 				INFOPLIST_FILE = "VGC Damage Calculator/VGC Damage Calculator-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
