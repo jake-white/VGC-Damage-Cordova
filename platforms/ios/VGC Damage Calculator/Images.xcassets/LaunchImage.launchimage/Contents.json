@@ -39,7 +39,7 @@
       "extent" : "full-screen",
       "idiom" : "iphone",
       "subtype" : "retina4",
-      "filename" : "2208x1242_Portrait-4.png",
+      "filename" : "Default-568h@2x.png",
       "minimum-system-version" : "7.0",
       "orientation" : "portrait",
       "scale" : "2x"
@@ -93,7 +93,7 @@
     {
       "orientation" : "portrait",
       "idiom" : "iphone",
-      "filename" : "2208x1242_Portrait-11.png",
+      "filename" : "Default-568h@2x-1.png",
       "extent" : "full-screen",
       "subtype" : "retina4",
       "scale" : "2x"
@@ -101,19 +101,20 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
+      "filename" : "2208x1242_Portrait-18.png",
       "extent" : "to-status-bar",
       "scale" : "1x"
     },
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
-      "filename" : "2208x1242_Portrait-12.png",
       "extent" : "full-screen",
       "scale" : "1x"
     },
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
+      "filename" : "2208x1242_Portrait-17.png",
       "extent" : "to-status-bar",
       "scale" : "1x"
     },
@@ -127,19 +128,20 @@
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
+      "filename" : "2208x1242_Portrait-19.png",
       "extent" : "to-status-bar",
       "scale" : "2x"
     },
     {
       "orientation" : "portrait",
       "idiom" : "ipad",
-      "filename" : "2208x1242_Portrait-13.png",
       "extent" : "full-screen",
       "scale" : "2x"
     },
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
+      "filename" : "2208x1242_Portrait-16.png",
       "extent" : "to-status-bar",
       "scale" : "2x"
     },
@@ -167,6 +169,22 @@
       "minimum-system-version" : "11.0",
       "orientation" : "landscape",
       "scale" : "3x"
+    },
+    {
+      "orientation" : "portrait",
+      "idiom" : "ipad",
+      "filename" : "2208x1242_Portrait-12.png",
+      "extent" : "full-screen",
+      "unassigned" : true,
+      "scale" : "1x"
+    },
+    {
+      "orientation" : "portrait",
+      "idiom" : "ipad",
+      "filename" : "2208x1242_Portrait-13.png",
+      "extent" : "full-screen",
+      "unassigned" : true,
+      "scale" : "2x"
     }
   ],
   "info" : {
