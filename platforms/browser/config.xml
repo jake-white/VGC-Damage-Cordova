@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="10018" id="com.whitejaa.calc" version="Beta v0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="10020" id="whitejaa.calc" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>VGC Damage Calculator</name>
     <description>
         Pokémon damage calculator designed for the VGC format.
@@ -15,10 +15,4 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <icon density="ldpi" height="48" platform="android" src="res/icon/android/48.png" width="48" />
-    <icon density="mdpi" height="64" platform="android" src="res/icon/android/64.png" width="64" />
-    <icon density="hdpi" height="72" platform="android" src="res/icon/android/72.png" width="72" />
-    <icon density="xhdpi" height="96" platform="android" src="res/icon/android/96.png" width="96" />
-    <icon density="xxhdpi" height="144" platform="android" src="res/icon/android/144.png" width="144" />
-    <icon density="xxxhdpi" height="196" platform="android" src="res/icon/android/196.png" width="196" />
 </widget>

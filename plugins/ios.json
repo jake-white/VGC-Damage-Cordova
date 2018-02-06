@@ -7,14 +7,14 @@
     "files": {}
   },
   "installed_plugins": {
-    "cc.fovea.cordova.purchase": {
-      "PACKAGE_NAME": "com.whitejaa.calc"
-    },
     "cordova-plugin-admobpro": {
       "PACKAGE_NAME": "com.whitejaa.calc"
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.whitejaa.calc"
+    },
+    "cordova-plugin-inapppurchase": {
+      "PACKAGE_NAME": "whitejaa.calc"
     }
   },
   "dependent_plugins": {

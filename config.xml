@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="10020" id="whitejaa.calc" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="10020" id="whitejaa.calc" version="1.0.12" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>VGC Damage Calculator</name>
     <description>
         Pokémon damage calculator designed for the VGC format.
@@ -23,12 +23,9 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <engine name="android" spec="^6.3.0" />
     <engine name="browser" spec="^5.0.1" />
     <engine name="ios" spec="^4.5.3" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="cordova-plugin-admobpro" spec="^2.29.24" />
-    <plugin name="cc.fovea.cordova.purchase" spec="^7.0.2">
-        <variable name="BILLING_KEY" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkY5+td5i0VKwZN6jY062OcD0dRlK9ToIz4UhzSgPfWMA8hQcSDBLhU1zoThhMvvCXd3mjmYLDxM7c92la29KtLm5Z+QNNJEDYxlIUfkvc9eRi8Z3O6mmGtUCmFB8WGS35CvtNdhzxqRIgC9Y1WO1S1Gvzy7Xi+o//5fRPBOKOoN7qZggkHXWZnGy/2QUiwykI/i1Z3uURsPAC9R+bPiUa2B0mAcGhJQOPOAULZsq2HXatqpIz/KUGZyBriA3nxmfu56DjIXhH0VG74NSaXemj5jdjiAM2t2k33pd28RYtDib9aHbUn936QMTI9jMap8xCA7iZjH9HGer2E3dHRtxzQIDAQAB" />
-    </plugin>
+    <plugin name="cordova-plugin-inapppurchase" spec="^1.2.0" />
 </widget>

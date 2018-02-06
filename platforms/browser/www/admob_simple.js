@@ -15,8 +15,10 @@ if( /(android)/i.test(navigator.userAgent) ) {
   };
 }
 
+document.addEventListener("deviceready", initApp, false);
 function initApp() {
   if (! AdMob ) { alert( 'admob plugin not ready' ); return; }
+  initStore();
 
   // this will create a banner on startup
   AdMob.createBanner( {
@@ -29,7 +31,7 @@ function initApp() {
   } );
 }
 function checkAds() {
-  if(!NO_ADS_OWNED) {
+  if(!REMOVE_ADS) {
     if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
         document.addEventListener('deviceready', initApp, false);
     } else {
@@ -39,5 +41,5 @@ function checkAds() {
 }
 
 document.addEventListener('onAdFailLoad', function(e){
-    setTimeout(checkAds, 2000);
+    setTimeout(checkAds, 15000);
 });

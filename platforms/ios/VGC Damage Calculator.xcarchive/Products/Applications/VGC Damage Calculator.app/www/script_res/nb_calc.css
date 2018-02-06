@@ -91,7 +91,7 @@ body, html {
 }
 
 .wrapper{
-    padding:0.7em;
+    padding:0.4em;
     max-width:100%;
     margin:10 auto;
 }
@@ -106,7 +106,7 @@ body, html {
     width: 26em;
 }
 .panel {
-  margin: 5px;
+  margin: 0.1em;
   background-color: #ffffff;
   border: medium none;
   border-radius: 2px;

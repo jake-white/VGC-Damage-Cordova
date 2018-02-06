@@ -3,40 +3,9 @@
   "display": "standalone",
   "name": "VGC Damage Calculator",
   "short_name": "VGC Damage Calculator",
-  "version": "com.whitejaa.calc",
+  "version": "whitejaa.calc",
   "description": "Pokémon damage calculator designed for the VGC format.",
   "author": "Jake White",
-  "icons": [
-    {
-      "src": "res/icon/android/48.png",
-      "type": "image/png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "res/icon/android/64.png",
-      "type": "image/png",
-      "sizes": "64x64"
-    },
-    {
-      "src": "res/icon/android/72.png",
-      "type": "image/png",
-      "sizes": "72x72"
-    },
-    {
-      "src": "res/icon/android/96.png",
-      "type": "image/png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "res/icon/android/144.png",
-      "type": "image/png",
-      "sizes": "144x144"
-    },
-    {
-      "src": "res/icon/android/196.png",
-      "type": "image/png",
-      "sizes": "196x196"
-    }
-  ],
+  "icons": [],
   "start_url": "index.html"
 }

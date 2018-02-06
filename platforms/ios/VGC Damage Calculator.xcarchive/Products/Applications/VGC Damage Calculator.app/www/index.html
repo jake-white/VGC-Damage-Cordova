@@ -11,8 +11,8 @@
   </script>
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:* gap://* tel:* 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'" />
     <title>Pokémon Damage Calculator</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="select2/select2.css" />
     <link type="text/css" rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css"/>
     <link type="text/css" rel="stylesheet" href="script_res/ap_calc.css" />
@@ -23,7 +23,6 @@
     <script src="jquery-3.2.1.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'unsafe-inline' 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
   </head>
   <script>
     $(document).ready(function(){
@@ -108,14 +107,14 @@
                 </div>
                 <div>
                   <label>Level</label>
-                  <input class="level calc-trigger" value="50" />
+                  <input id="largerInput" class="level calc-trigger" value="50" />
                 </div>
                 <div class="hide">
                   <label>Weight (kg)</label>
                   <input class="weight calc-trigger" value="10.0" />
                 </div>
               </div>
-              <div class="info-group">
+              <div class="info-group smallLabel">
                 <table class="ios-stats">
                   <tr>
                     <th></th>
@@ -380,7 +379,7 @@
               </div>
               <div class="info-group">
                 <label>Current HP</label>
-                <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input class="percent-hp calc-trigger" value="100" />%)
+                <input id="largerInput" class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input id="largerInput" class="percent-hp calc-trigger" value="100" />%)
               </div>
               <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -628,14 +627,14 @@
                 </div>
                 <div>
                   <label>Level</label>
-                  <input class="level calc-trigger" value="100" />
+                  <input id="largerInput" class="level calc-trigger" value="100" />
                 </div>
                 <div class="hide">
                   <label>Weight (kg)</label>
                   <input class="weight calc-trigger" value="10.0" />
                 </div>
               </div>
-              <div class="info-group">
+              <div class="info-group smallLabel">
                 <table>
                   <tr>
                     <th></th>
@@ -898,7 +897,7 @@
               </div>
               <div class="info-group">
                 <label>Current HP</label>
-                <input class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input class="percent-hp calc-trigger" value="100" />%)
+                <input id="largerInput" class="current-hp calc-trigger" value="341" />/<span class="max-hp">341</span> (<input id="largerInput" class="percent-hp calc-trigger" value="100" />%)
               </div>
               <div class="move1">
                 <select class="move-selector calc-trigger small-select"></select>
@@ -982,10 +981,11 @@
         <p>Hey, thanks! My VGC tools will <i>always</i> be open source and free for the community to use. However, I would appreciate any of the following!
         <p>
         <li class="list-group-item">
-          <div><input class="result-move btn-input" type="button" name="noads_button" id="noads_button" /><label class="custombtn btn-xxxwide" for="noads_button">Remove Ads!</label></div>
+          <div><input class="result-move btn-input" type="button" name="noads_button" id="noads_button" /><label class="custombtn btn-xxxwide" for="noads_button">Remove Ads / Restore Purchase!</label>
+          </div>
         </li>
         <li class="list-group-item"><a href="https://www.paypal.me/squirrelboyVGC">Buy me a coffee, or help me pay for tournament fees. ;)</a></li>
-        <li class="list-group-item"><a href="https://play.google.com/store/apps/details?id=com.whitejaa.damage">Leave a review on this app.</a></li>
+        <li class="list-group-item"><a href="https://itunes.apple.com/us/app/vgc-damage-calculator/id1309443837?ls=1&mt=8">Leave a review on this app.</a></li>
         <li class="list-group-item">Turn off adblock when viewing the browser versions of my tools.</li>
       </ul>
     </div>
@@ -1008,9 +1008,9 @@
       </ul>
     </div>
   </body>
-  <script type="text/javascript" src="admob_simple.js"></script>
   <script type="text/javascript" src="cordova.js"></script>
-  <body onload="onLoad()"></body>
+  <script type="text/javascript" src="script_res/lightweight_billing_script.js"></script>
+  <script type="text/javascript" src="admob_simple.js"></script>
   <script type="text/javascript" src="select2/select2-touch.js"></script>
   <script type="text/javascript" src="script_res/cordova_local_settings.js"></script>
   <script type="text/javascript" src="script_res/pokedex.js"></script>
