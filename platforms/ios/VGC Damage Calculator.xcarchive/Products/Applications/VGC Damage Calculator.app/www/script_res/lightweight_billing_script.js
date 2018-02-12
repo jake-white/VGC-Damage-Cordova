@@ -15,7 +15,7 @@ $('#noads_button').click(function(){
   restoreRemoveAds();
 });
 
-function buyremoveAds() {
+function buyRemoveAds() {
   inAppPurchase.buy(productId)
   .then(function(data) {
     removeAds();
@@ -42,8 +42,9 @@ function initStore() {
   .catch(function (err) {
     console.log(err);
   });
-
-  REMOVE_ADS = window.localStorage.getItem("REMOVE_ADS");
+  if(window.localStorage.getItem("REMOVE_ADS") != null){
+    REMOVE_ADS = window.localStorage.getItem("REMOVE_ADS");
+  }
   if(REMOVE_ADS) {
     removeAds();
   }

@@ -9,16 +9,16 @@
 		<key>CFBundleIdentifier</key>
 		<string>whitejaa.calc</string>
 		<key>CFBundleShortVersionString</key>
-		<string>1.0.11</string>
+		<string>1.0.12</string>
 		<key>CFBundleVersion</key>
-		<string>1.0.11</string>
+		<string>1.0.12</string>
 		<key>SigningIdentity</key>
 		<string>iPhone Developer: Jake White (C74U4H3N72)</string>
 	</dict>
 	<key>ArchiveVersion</key>
 	<integer>2</integer>
 	<key>CreationDate</key>
-	<date>2018-02-06T18:59:31Z</date>
+	<date>2018-02-12T00:46:04Z</date>
 	<key>DefaultToolchainInfo</key>
 	<dict>
 		<key>DisplayName</key>
