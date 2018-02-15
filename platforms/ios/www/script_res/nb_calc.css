@@ -91,7 +91,7 @@ body, html {
 }
 
 .wrapper{
-    padding:0.4em;
+    padding:0.3em;
     max-width:100%;
     margin:10 auto;
 }
@@ -111,9 +111,6 @@ body, html {
   border: medium none;
   border-radius: 2px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
-}
-.panel-body {
-  padding: 15px;
 }
 .panel-heading {
   background-color: #1e3864;

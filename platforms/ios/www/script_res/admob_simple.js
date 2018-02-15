@@ -3,19 +3,19 @@ var admobid = {};
 // TODO: replace the following ad units with your own
 if( /(android)/i.test(navigator.userAgent) ) {
   admobid = { // for Android
-    banner: 'ca-app-pub-1585074682884657/4793534712',
+    banner: 'ca-app-pub-1585074682884657/2566821736',
   };
 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
   admobid = { // for iOS
-    banner: 'ca-app-pub-1585074682884657/4793534712',
+    banner: 'ca-app-pub-1585074682884657/2566821736',
   };
 } else {
   admobid = { // for Windows Phone
-    banner: 'ca-app-pub-1585074682884657/4793534712',
+    banner: 'ca-app-pub-1585074682884657/2566821736',
   };
 }
 
-document.addEventListener("deviceready", initApp, false);
+checkAds();
 function initApp() {
   if(!REMOVE_ADS) {
   // this will create a banner on startup
@@ -35,8 +35,6 @@ function checkAds() {
     if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
         document.addEventListener('deviceready', initApp, false);
         document.addEventListener('deviceready', initStore, false);
-    } else {
-        initApp();
     }
   }
 }

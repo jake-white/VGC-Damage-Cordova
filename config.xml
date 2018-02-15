@@ -22,6 +22,7 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <splash src="www/splash/ios/Default@2x~universal~anyany.png" />
     </platform>
     <engine name="browser" spec="^5.0.1" />
     <engine name="ios" spec="^4.5.3" />

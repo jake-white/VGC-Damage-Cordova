@@ -8,6 +8,10 @@
     text-align:center;
 }
 
+.nav-tabs li {
+  width: 25%;
+}
+
 @font-face {
   font-family: 'Open Sans';
   src: url('../Open_Sans/OpenSans-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
@@ -54,6 +58,7 @@
 table {
   max-width: 100%
   display: inline-block;
+  font-size: 11pt;
 }
 
 /* general page styling */
@@ -61,6 +66,8 @@ body {
     width: 100%;
     font: 12pt Verdana, sans-serif;
     background-color: #bbeedd;
+    padding-top: constant(safe-area-inset-top); /*ios 11.0*/
+    padding-top: env(safe-area-inset-top); /*ios 11.2*/
 }
 fieldset {
     float: left;
@@ -84,7 +91,7 @@ th {
 
 .before-title {
   padding: 0em;
-  padding-bottom: 3em;
+  padding-bottom: 4em;
   background-color: #1e3864;
 }
 .yeartag {
@@ -104,6 +111,10 @@ th {
     width: 90%
     clear: both;
     display: inline-block;
+}
+
+.panel-body {
+  padding: 5px 0px 0px 0px;
 }
 .poke-info {
     width: 100%;
@@ -228,9 +239,14 @@ th {
     width: 4.5em;
 }
 .poke-info input:not([type]), .poke-info input[type="text"],
- .poke-info evs, .poke-info ivs, .poke-info move-bp {
+ .poke-info evs, .poke-info move-bp {
     display: inline-block;
-    width: 2.3em;
+    width: 3em;
+}
+
+input.ivs.calc-trigger {
+  display: inline-block;
+  width: 2.3em;
 }
 
 .poke-info base, #largerInput {
@@ -282,6 +298,7 @@ select.toxic-counter {
     width: 4em;
     margin-left: 1px;
     margin-right: 1px;
+    white-space: nowrap;
 }
 .poke-info .ev-total, .poke-info .ev-left {
     font-size: 0.8em;

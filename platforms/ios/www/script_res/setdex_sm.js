@@ -1,8 +1,7 @@
 var SETDEX_SM = {};
 
 var components = [
-    SETDEX_TT2017,
-    SETDEX_SMOGON
+    SETDEX_TT2018
 ];
 
 for (var i=0; i<components.length; i++) {
@@ -21,6 +20,7 @@ var reloadXYScript = function()
   console.log(SETDEX_CUSTOM);
     components = [
     SETDEX_TT2017,
+    SETDEX_CUSTOM,
     SETDEX_SMOGON
 ];
 

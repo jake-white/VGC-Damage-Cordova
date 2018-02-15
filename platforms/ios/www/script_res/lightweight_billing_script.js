@@ -16,8 +16,10 @@ $('#noads_button').click(function(){
 });
 
 function buyRemoveAds() {
+  console.log("Attempting to buy...");
   inAppPurchase.buy(productId)
   .then(function(data) {
+
     removeAds();
     window.localStorage.setItem("REMOVE_ADS", REMOVE_ADS);
   })
@@ -59,6 +61,7 @@ $("label[for='noads_button']").text("Checking purchases...");
   inAppPurchase
     .restorePurchases()
     .then(function(purchases){
+      console.log("Attempting to restore...");
       purchases.forEach(function(purchase) {
         productToRestore = purchase
         if(productToRestore.productId = productId) {
@@ -67,9 +70,11 @@ $("label[for='noads_button']").text("Checking purchases...");
           window.localStorage.setItem("REMOVE_ADS", REMOVE_ADS);
         }
       })
+      if(!successfulRestore) {
+        console.log("Nothing to restore!");
+        buyRemoveAds();
+      }
     },function(err) {console.log(err);} );
 
-  if(!successfulRestore) {
-    buyRemoveAds();
-  }
+
 }
