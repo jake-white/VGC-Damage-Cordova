@@ -7,19 +7,19 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-admobpro": {
-      "PACKAGE_NAME": "com.whitejaa.damage"
-    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.whitejaa.damage"
     },
     "cc.fovea.cordova.purchase": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-admobpro": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {
     "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.whitejaa.damage"
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   }
 }

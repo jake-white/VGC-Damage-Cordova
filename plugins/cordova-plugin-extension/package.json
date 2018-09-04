@@ -1,46 +1,66 @@
 {
-  "_from": "cordova-plugin-extension",
-  "_id": "cordova-plugin-extension@1.5.2",
-  "_inBundle": false,
-  "_integrity": "sha1-l97LYoA7n7PmewOjF5e/5RLN9Ak=",
+  "_args": [
+    [
+      "cordova-plugin-extension",
+      "/home/jake/VGC/VGC-Damage-Cordova"
+    ]
+  ],
+  "_from": "cordova-plugin-extension@latest",
+  "_id": "cordova-plugin-extension@1.5.4",
+  "_inCache": true,
+  "_installable": true,
   "_location": "/cordova-plugin-extension",
+  "_nodeVersion": "6.11.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-extension-1.5.4.tgz_1515821051581_0.2124536067713052"
+  },
+  "_npmUser": {
+    "email": "rjfun.mobile@gmail.com",
+    "name": "floatinghotpot"
+  },
+  "_npmVersion": "3.10.10",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "cordova-plugin-extension",
     "name": "cordova-plugin-extension",
-    "escapedName": "cordova-plugin-extension",
+    "raw": "cordova-plugin-extension",
     "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-extension/-/cordova-plugin-extension-1.5.2.tgz",
-  "_shasum": "97decb62803b9fb3e67b03a31797bfe512cdf409",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-extension/-/cordova-plugin-extension-1.5.4.tgz",
+  "_shasum": "938fca0cb0006bab56ffcee506201bfe1b00e384",
+  "_shrinkwrap": null,
   "_spec": "cordova-plugin-extension",
-  "_where": "/home/squirrelboy/VGC/VGC-Damage-Cordova",
+  "_where": "/home/jake/VGC/VGC-Damage-Cordova",
   "author": {
-    "name": "Liming Xie",
-    "email": "rjfun.mobile@gmail.com"
+    "email": "rjfun.mobile@gmail.com",
+    "name": "Liming Xie"
   },
   "bugs": {
     "url": "https://github.com/floatinghotpot/cordova-extension/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-extension",
     "platforms": [
+      "amazon-fireos",
       "android",
-      "ios",
-      "amazon-fireos"
+      "ios"
     ]
   },
-  "deprecated": false,
+  "dependencies": {},
   "description": "Cordova Plugin common extension with adapter interface",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "938fca0cb0006bab56ffcee506201bfe1b00e384",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-extension/-/cordova-plugin-extension-1.5.4.tgz"
+  },
+  "gitHead": "e6b70a2b122a865a9e7265b766da4acbb904d2be",
   "homepage": "https://github.com/floatinghotpot/cordova-extension#readme",
   "keywords": [
     "cordova",
@@ -49,10 +69,19 @@
     "rjfun"
   ],
   "license": "MIT",
+  "maintainers": [
+    {
+      "name": "floatinghotpot",
+      "email": "rjfun.mobile@gmail.com"
+    }
+  ],
   "name": "cordova-plugin-extension",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/floatinghotpot/cordova-extension.git"
   },
-  "version": "1.5.2"
+  "scripts": {},
+  "version": "1.5.4"
 }

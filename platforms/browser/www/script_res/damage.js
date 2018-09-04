@@ -37,7 +37,13 @@ function CALCULATE_ALL_MOVES_BW(p1, p2, field) {
 function getDamageResult(attacker, defender, move, field) {
     var moveDescName = move.name;
     var isQuarteredByProtect = false;
-    if(move.isZ){
+    if(move.isSignatureZ){
+      move.isZ = true;
+      if(field.isProtect){
+          isQuarteredByProtect = true;
+      }
+    }
+    if(move.isZ && !move.isSignatureZ){
         if (move.name === "Nature Power") {
             move.zp = (field.terrain === "Electric" || field.terrain === "Grassy" || field.terrain === "Psychic" || field.terrain === "Misty") ? 175 : 160;
             move.type = field.terrain === "Electric" ? "Electric" : field.terrain === "Grassy" ? "Grass" : field.terrain === "Misty" ? "Fairy" : move.type = field.terrain === "Psychic" ? "Psychic" : "Normal";
@@ -849,6 +855,21 @@ function checkEvo(p1, p2){
         p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 2);
         p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 2);
         p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 2);
+    }
+
+    if($('#clangL').prop("checked")){
+        p1.boosts[AT] = Math.min(6, p1.boosts[AT] + 1);
+        p1.boosts[DF] = Math.min(6, p1.boosts[DF] + 1);
+        p1.boosts[SA] = Math.min(6, p1.boosts[SA] + 1);
+        p1.boosts[SD] = Math.min(6, p1.boosts[SD] + 1);
+        p1.boosts[SP] = Math.min(6, p1.boosts[SP] + 1);
+    }
+    if($('#clangR').prop("checked")){
+        p2.boosts[AT] = Math.min(6, p2.boosts[AT] + 1);
+        p2.boosts[DF] = Math.min(6, p2.boosts[DF] + 1);
+        p2.boosts[SA] = Math.min(6, p2.boosts[SA] + 1);
+        p2.boosts[SD] = Math.min(6, p2.boosts[SD] + 1);
+        p2.boosts[SP] = Math.min(6, p2.boosts[SP] + 1);
     }
 
 }

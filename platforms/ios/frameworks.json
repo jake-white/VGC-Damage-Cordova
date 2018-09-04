@@ -17,7 +17,7 @@
     "MessageUI.framework": 1,
     "OpenGLES.framework": 1,
     "SafariServices.framework": 1,
+    "StoreKit.framework": 1,
     "SystemConfiguration.framework": 1,
-    "UIKit.framework": 1,
-    "StoreKit.framework": 1
+    "UIKit.framework": 1
 }

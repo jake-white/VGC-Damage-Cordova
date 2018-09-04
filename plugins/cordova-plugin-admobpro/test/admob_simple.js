@@ -43,9 +43,7 @@ function initApp() {
 }
 
 if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
-  console.log("FUUCK");
     document.addEventListener('deviceready', initApp, false);
 } else {
-  console.log("REALLY FUUCK");
     initApp();
 }

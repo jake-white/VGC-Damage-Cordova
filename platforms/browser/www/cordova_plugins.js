@@ -12,10 +12,10 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-extension": "1.5.2",
-    "cordova-plugin-admobpro": "2.29.24",
     "cordova-plugin-whitelist": "1.3.2",
-    "cc.fovea.cordova.purchase": "7.0.2"
+    "cc.fovea.cordova.purchase": "7.0.2",
+    "cordova-plugin-extension": "1.5.4",
+    "cordova-plugin-admobpro": "2.31.6"
 }
 // BOTTOM OF METADATA
 });

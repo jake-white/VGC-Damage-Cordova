@@ -20,7 +20,7 @@
     <link href="script_res/emoji.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap/bootstrap.css">
-    <script src="jquery-3.1.1.min.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
     <script src="bootstrap/bootstrap.min.js"></script>
     <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
   </head>
@@ -598,6 +598,14 @@
                 </div>
               </div>
               <div class="btn-group gen-specific g7">
+                  <div class="left" title="Has this Pokemon used Clangorous Soulblaze?">
+                      <input class="btn-input calc-trigger" type="checkbox" id="clangL" /><label class="custombtn btn-xwide" for="clangL"><img src="image_res/784.png"><br>Clangorous Soulblaze</label>
+                  </div>
+                  <div class="right" title="Has this Pokemon used Clangorous Soulblaze?">
+                      <input class="btn-input calc-trigger" type="checkbox" id="clangR" /><label class="custombtn btn-xwide" for="clangR"><img src="image_res/784.png"><br>Clangorous Soulblaze</label>
+                  </div>
+              </div>
+              <div class="btn-group gen-specific g7">
                 <div class="left" title="Has this Pokemon used Extreme Evoboost?">
                   <input class="btn-input calc-trigger" type="checkbox" id="evoL" /><label class="custombtn btn-xwide" for="evoL"><img src="image_res/133.png"><br>Extreme Evoboost</label>
                 </div>
@@ -972,6 +980,7 @@
         </div>
       </div>
     </div>
+    <div id="tempField"></div>
     <div class="footer" style="text-align: left">
       <input class="btn-input" type="button" id="settings" /><label class="custombtn btn-wide" for="settings" title="Settings">Tab Settings</label>
       <input class="btn-input" type="button" id="credits" /><label class="custombtn btn-wide" for="credits" title="Credits">Credits</label>
@@ -982,6 +991,7 @@
         <li class="list-group-item">
           <div><input class="result-move btn-input" type="button" name="noads_button" id="noads_button" /><label class="custombtn btn-xxxwide" for="noads_button">Remove Ads!</label></div>
         </li>
+        <li class="list-group-item"><a href="https://twitter.com/squirrelboyVGC">Follow me on Twitter to see updates!</a></li>
         <li class="list-group-item"><a href="https://www.paypal.me/squirrelboyVGC">Buy me a coffee, or help me pay for tournament fees. ;)</a></li>
         <li class="list-group-item"><a href="https://play.google.com/store/apps/details?id=com.whitejaa.damage">Leave a review on this app.</a></li>
         <li class="list-group-item">Turn off adblock when viewing the browser versions of my tools.</li>
@@ -1003,19 +1013,22 @@
         <li class="list-group-item">Art Assets by Benjamin Busche (<a href="https://twitter.com/pichuscute0">@pichuscute0</a>)</li>
         <li class="list-group-item">Special Thanks to: <a href="http://nuggetbridge.com/">NuggetBridge</a> & <a href="https://trainertower.com">Trainer Tower</a></li>
         <li class="list-group-item">Thanks to my many helpful Alpha & Beta testers!</li>
+        <li class="list-group-item"><a href="https://github.com/jake-white/VGC-Damage-Cordova">Github Page</a></li>
+        <li class="list-group-item"><a href="http://trainertower.com/damagecalc/">Browser Version</a></li>
       </ul>
     </div>
   </body>
   <script type="text/javascript" src="billing_res/billing_script.js"></script>
   <script type="text/javascript" src="admob_simple.js"></script>
   <script type="text/javascript" src="cordova.js"></script>
-  <script type="text/javascript" src="select2/select2.min.js"></script>
+  <script type="text/javascript" src="select2/select2-touch.js"></script>
   <script type="text/javascript" src="script_res/cordova_local_settings.js"></script>
   <script type="text/javascript" src="script_res/pokedex.js"></script>
   <script type="text/javascript" src="script_res/setdex_showdown.js"></script>
   <script type="text/javascript" src="script_res/setdex_globalLink.js"></script>
   <script type="text/javascript" src="script_res/setdex_nuggetBridge.js"></script>
   <script type="text/javascript" src="script_res/setdex_tt2017.js" id = "TTScript"></script>
+  <script type="text/javascript" src="script_res/setdex_tt2018.js" id = "TTScript"></script>
   <script type="text/javascript" src="script_res/setdex_smogon.js" id = "SmogScript"></script>
   <script type="text/javascript" src="script_res/setdex_xy.js" id = "XYScript"></script>
   <script type="text/javascript" src="script_res/setdex_sm.js" id = "SMScript"></script>

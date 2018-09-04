@@ -5,26 +5,14 @@
   },
   "config_munge": {
     "files": {
-      "res/xml/config.xml": {
-        "parents": {
-          "/*": [
-            {
-              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"InAppBillingPlugin\"><param name=\"android-package\" value=\"com.smartmobilesoftware.inappbilling.InAppBillingPlugin\" /></feature>",
-              "count": 1
-            }
-          ]
-        }
-      },
       "AndroidManifest.xml": {
         "parents": {
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"com.android.vending.BILLING\" />",
+              "count": 1
+            }
+          ],
           "/manifest/application": [
             {
               "xml": "<activity android:configChanges=\"keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize\" android:name=\"com.google.android.gms.ads.AdActivity\" android:theme=\"@android:style/Theme.Translucent\" />",
@@ -33,13 +21,29 @@
           ],
           "/*": [
             {
-              "xml": "<uses-permission android:name=\"com.android.vending.BILLING\" />",
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
               "count": 1
             }
-          ],
-          "/manifest": [
+          ]
+        }
+      },
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
             {
-              "xml": "<uses-permission android:name=\"com.android.vending.BILLING\" />",
+              "xml": "<feature name=\"InAppBillingPlugin\"><param name=\"android-package\" value=\"com.smartmobilesoftware.inappbilling.InAppBillingPlugin\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"AdMob\"><param name=\"android-package\" value=\"com.rjfun.cordova.admob.AdMobPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             }
           ]
@@ -58,6 +62,10 @@
     }
   },
   "installed_plugins": {
+    "cc.fovea.cordova.purchase": {
+      "BILLING_KEY": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkY5+td5i0VKwZN6jY062OcD0dRlK9ToIz4UhzSgPfWMA8hQcSDBLhU1zoThhMvvCXd3mjmYLDxM7c92la29KtLm5Z+QNNJEDYxlIUfkvc9eRi8Z3O6mmGtUCmFB8WGS35CvtNdhzxqRIgC9Y1WO1S1Gvzy7Xi+o//5fRPBOKOoN7qZggkHXWZnGy/2QUiwykI/i1Z3uURsPAC9R+bPiUa2B0mAcGhJQOPOAULZsq2HXatqpIz/KUGZyBriA3nxmfu56DjIXhH0VG74NSaXemj5jdjiAM2t2k33pd28RYtDib9aHbUn936QMTI9jMap8xCA7iZjH9HGer2E3dHRtxzQIDAQAB",
+      "PACKAGE_NAME": "com.whitejaa.damage"
+    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.whitejaa.damage"
     },
@@ -66,22 +74,10 @@
     },
     "cordova-plugin-admobpro": {
       "PACKAGE_NAME": "com.whitejaa.damage"
-    },
-    "cc.fovea.cordova.purchase": {
-      "BILLING_KEY": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkY5+td5i0VKwZN6jY062OcD0dRlK9ToIz4UhzSgPfWMA8hQcSDBLhU1zoThhMvvCXd3mjmYLDxM7c92la29KtLm5Z+QNNJEDYxlIUfkvc9eRi8Z3O6mmGtUCmFB8WGS35CvtNdhzxqRIgC9Y1WO1S1Gvzy7Xi+o//5fRPBOKOoN7qZggkHXWZnGy/2QUiwykI/i1Z3uURsPAC9R+bPiUa2B0mAcGhJQOPOAULZsq2HXatqpIz/KUGZyBriA3nxmfu56DjIXhH0VG74NSaXemj5jdjiAM2t2k33pd28RYtDib9aHbUn936QMTI9jMap8xCA7iZjH9HGer2E3dHRtxzQIDAQAB",
-      "PACKAGE_NAME": "com.whitejaa.damage"
     }
   },
   "dependent_plugins": {},
   "modules": [
-    {
-      "id": "cordova-plugin-admobpro.AdMob",
-      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-      "pluginId": "cordova-plugin-admobpro",
-      "clobbers": [
-        "window.AdMob"
-      ]
-    },
     {
       "id": "cc.fovea.cordova.purchase.InAppBillingPlugin",
       "file": "plugins/cc.fovea.cordova.purchase/www/store-android.js",
@@ -89,12 +85,20 @@
       "clobbers": [
         "store"
       ]
+    },
+    {
+      "id": "cordova-plugin-admobpro.AdMob",
+      "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+      "pluginId": "cordova-plugin-admobpro",
+      "clobbers": [
+        "window.AdMob"
+      ]
     }
   ],
   "plugin_metadata": {
+    "cc.fovea.cordova.purchase": "7.0.2",
     "cordova-plugin-whitelist": "1.3.2",
-    "cordova-plugin-extension": "1.5.2",
-    "cordova-plugin-admobpro": "2.29.24",
-    "cc.fovea.cordova.purchase": "7.0.2"
+    "cordova-plugin-extension": "1.5.4",
+    "cordova-plugin-admobpro": "2.31.6"
   }
 }
